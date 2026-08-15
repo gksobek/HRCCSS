@@ -3,30 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coptic Sunday School Portal</title>
+  <title>Sunday School Learning Hub | The Holy Resurrection Coptic Church</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-stone-100 min-h-screen text-stone-800 antialiased p-3 md:p-6">
-  <div class="max-w-3xl mx-auto">
-    <!-- Header -->
-    <header class="bg-white rounded-2xl shadow-sm border border-stone-200 p-5 mb-4 text-center">
-      <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Coptic Orthodox Church</span>
-      <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-2">Sunday School Learning Hub</h1>
+<body class="bg-stone-100 min-h-screen text-stone-800 antialiased p-3 md:p-6 flex flex-col justify-between">
+  <div class="max-w-3xl mx-auto w-full">
+    
+    <!-- Church Header -->
+    <header class="bg-white rounded-2xl shadow-sm border border-stone-200 p-5 md:p-6 mb-4 text-center">
+      <div class="flex flex-col items-center justify-center">
+        <!-- Logo -->
+        <a href="https://theholyresurrection.com/" target="_blank" rel="noopener noreferrer">
+          <img src="logo.png" alt="The Holy Resurrection Coptic Church Logo" class="w-24 h-24 md:w-28 md:h-28 object-contain mb-3 drop-shadow-sm hover:opacity-95 transition" />
+        </a>
+        
+        <span class="text-[11px] font-bold uppercase tracking-wider text-red-900 bg-red-50 border border-red-200 px-3 py-0.5 rounded-full mb-1.5">
+          Diocese of Ohio, Michigan, & Indiana
+        </span>
+        <h1 class="text-xl md:text-2xl font-black text-stone-900 leading-tight">
+          The Holy Resurrection Coptic Church
+        </h1>
+        <p class="text-xs text-stone-500 font-medium mt-0.5">Sunday School Learning Hub & Curriculum</p>
+      </div>
       
       <!-- Lesson Selector Dropdown -->
-      <div class="mt-4 max-w-md mx-auto">
-        <label class="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1">Select Lesson / Topic:</label>
-        <select id="lesson-select" onchange="onLessonChange()" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-amber-500 outline-none">
-          <!-- Populated from lessons.json -->
+      <div class="mt-5 max-w-md mx-auto">
+        <label class="block text-xs font-bold text-stone-500 uppercase tracking-wider mb-1 text-left">Select Lesson / Topic:</label>
+        <select id="lesson-select" onchange="onLessonChange()" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-red-900 outline-none">
+          <!-- Populated dynamically from lessons.json -->
         </select>
       </div>
 
       <!-- Navigation Tabs -->
       <div class="flex justify-center gap-2 mt-5 border-t border-stone-100 pt-4">
-        <button id="tab-study-btn" onclick="switchTab('study')" class="px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm">
+        <button id="tab-study-btn" onclick="switchTab('study')" class="px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm">
           📖 Study Guide
         </button>
-        <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+        <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200">
           ✍️ Take Quiz
         </button>
       </div>
@@ -35,16 +48,16 @@
     <!-- Tab 1: Study Guide Container -->
     <main id="study-container" class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8 space-y-6">
       <div class="border-b border-stone-100 pb-4">
-        <span id="lesson-badge" class="text-xs font-bold text-amber-800 uppercase tracking-wider"></span>
+        <span id="lesson-badge" class="text-xs font-bold text-red-900 uppercase tracking-wider"></span>
         <h2 id="lesson-title" class="text-2xl font-bold text-stone-900 mt-1"></h2>
         <p id="lesson-date" class="text-xs text-stone-400 mt-0.5"></p>
       </div>
 
       <!-- Memory Verse Card -->
-      <div class="bg-amber-50 border-l-4 border-amber-600 p-4 rounded-r-xl">
-        <h3 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Memory Verse</h3>
+      <div class="bg-red-50/60 border-l-4 border-red-900 p-4 rounded-r-xl">
+        <h3 class="text-xs font-bold text-red-950 uppercase tracking-wider">Memory Verse</h3>
         <p id="verse-text" class="text-stone-800 font-serif italic text-base md:text-lg mt-1"></p>
-        <p id="verse-ref" class="text-right text-xs font-bold text-amber-800 mt-2"></p>
+        <p id="verse-ref" class="text-right text-xs font-bold text-red-900 mt-2"></p>
       </div>
 
       <div id="lesson-intro" class="text-stone-700 leading-relaxed text-sm md:text-base"></div>
@@ -57,7 +70,7 @@
       </div>
 
       <div class="text-center pt-4">
-        <button onclick="switchTab('quiz')" class="px-6 py-3 bg-amber-700 hover:bg-amber-800 text-white font-bold text-sm rounded-xl transition shadow">
+        <button onclick="switchTab('quiz')" class="px-6 py-3 bg-red-950 hover:bg-red-900 text-white font-bold text-sm rounded-xl transition shadow">
           Ready? Take the Quiz →
         </button>
       </div>
@@ -69,18 +82,18 @@
       <div id="quiz-reg-screen" class="max-w-md mx-auto space-y-4">
         <div class="text-center mb-4">
           <h2 class="text-xl font-bold text-stone-900">Student Sign-In</h2>
-          <p class="text-xs text-stone-500 mt-1">Enter your name to begin this week's quiz</p>
+          <p class="text-xs text-stone-500 mt-1">Enter your name to submit your score to your Sunday school servant</p>
         </div>
         <div>
           <label class="block text-xs font-bold text-stone-700 mb-1">First Name</label>
-          <input type="text" id="student-first" placeholder="e.g. Mark" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" />
+          <input type="text" id="student-first" placeholder="e.g. Mark" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-sm" />
         </div>
         <div>
           <label class="block text-xs font-bold text-stone-700 mb-1">Last Name</label>
-          <input type="text" id="student-last" placeholder="e.g. Hanna" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" />
+          <input type="text" id="student-last" placeholder="e.g. Hanna" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-sm" />
         </div>
         <p id="reg-error" class="hidden text-rose-600 text-xs font-bold text-center">Please enter both your first and last name.</p>
-        <button onclick="startActiveQuiz()" class="w-full py-3.5 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl transition shadow">
+        <button onclick="startActiveQuiz()" class="w-full py-3.5 bg-red-950 hover:bg-red-900 text-white font-bold rounded-xl transition shadow">
           Start Quiz Now
         </button>
       </div>
@@ -92,14 +105,14 @@
           <span id="quiz-score-text">Score: 0</span>
         </div>
         <div class="w-full bg-stone-100 h-2 rounded-full mb-6 overflow-hidden">
-          <div id="quiz-progress-bar" class="bg-amber-600 h-full transition-all duration-300" style="width: 0%"></div>
+          <div id="quiz-progress-bar" class="bg-red-900 h-full transition-all duration-300" style="width: 0%"></div>
         </div>
 
         <h3 id="quiz-question-title" class="text-lg font-bold text-stone-900 mb-4 min-h-[52px]"></h3>
         <div id="quiz-options-box" class="space-y-3 mb-6"></div>
         <div id="quiz-feedback-box" class="hidden p-4 rounded-xl text-sm mb-4 leading-relaxed"></div>
 
-        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden w-full py-3 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl transition shadow">
+        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden w-full py-3 bg-red-950 hover:bg-red-900 text-white font-bold rounded-xl transition shadow">
           Next Question →
         </button>
       </div>
@@ -109,20 +122,32 @@
         <div class="text-5xl mb-2">🕊️</div>
         <h2 class="text-2xl font-bold text-stone-900">Quiz Completed!</h2>
         <p id="result-greeting" class="text-stone-600 text-sm font-medium mt-1"></p>
-        <p id="result-score-display" class="text-2xl text-amber-950 font-black my-4"></p>
+        <p id="result-score-display" class="text-2xl text-red-950 font-black my-4"></p>
         <p id="result-sync-status" class="text-xs text-stone-400 italic mb-6">Recording your score...</p>
         <button onclick="resetQuizState()" class="px-6 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl text-sm transition">
           Retake Quiz
         </button>
       </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-8 mb-4 text-xs text-stone-500 space-y-1">
+      <p class="font-semibold text-stone-700">The Holy Resurrection Coptic Orthodox Church</p>
+      <p>12549 Old Stone Dr, Indianapolis, IN 46236</p>
+      <p>
+        <a href="https://theholyresurrection.com/" target="_blank" rel="noopener noreferrer" class="text-red-900 hover:underline font-bold">
+          theholyresurrection.com
+        </a>
+      </p>
+    </footer>
+
   </div>
 
   <script>
     // -------------------------------------------------------------
     // 1. PASTE YOUR GOOGLE APPS SCRIPT URL HERE:
     // -------------------------------------------------------------
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5zFzQ0lxsAO1_8z3GMvWdcM7xS7NKic6DYApakJNh0TLoP34jPDhqXqPLwMJz_rYC/exec";
+    const SCRIPT_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
 
     let allLessons = [];
     let currentLesson = null;
@@ -132,7 +157,6 @@
     let studentFName = "";
     let studentLName = "";
 
-    // Load data from lessons.json
     async function init() {
       try {
         const res = await fetch("lessons.json");
@@ -148,7 +172,7 @@
     function populateLessonSelect() {
       const sel = document.getElementById("lesson-select");
       sel.innerHTML = "";
-      allLessons.forEach((l, idx) => {
+      allLessons.forEach((l) => {
         const opt = document.createElement("option");
         opt.value = l.id;
         opt.textContent = `${l.title} (${l.date})`;
@@ -167,7 +191,7 @@
 
     function renderLesson(lesson) {
       currentLesson = lesson;
-      document.getElementById("lesson-badge").textContent = lesson.category || "Sunday School";
+      document.getElementById("lesson-badge").textContent = lesson.category || "Sunday School Lesson";
       document.getElementById("lesson-title").textContent = lesson.title;
       document.getElementById("lesson-date").textContent = lesson.date;
       document.getElementById("verse-text").textContent = `"${lesson.memoryVerse.text}"`;
@@ -201,13 +225,13 @@
       if (tab === 'study') {
         studyC.classList.remove("hidden");
         quizC.classList.add("hidden");
-        studyBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm";
-        quizBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+        studyBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm";
+        quizBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
       } else {
         studyC.classList.add("hidden");
         quizC.classList.remove("hidden");
-        quizBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm";
-        studyBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+        quizBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm";
+        studyBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
       }
     }
 
@@ -251,7 +275,7 @@
 
       q.options.forEach((opt, idx) => {
         const btn = document.createElement("button");
-        btn.className = "w-full text-left p-3.5 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50 transition text-sm font-medium flex items-center";
+        btn.className = "w-full text-left p-3.5 rounded-xl border border-stone-200 hover:border-red-800 hover:bg-red-50/40 transition text-sm font-medium flex items-center";
         btn.innerHTML = `<span class="w-6 h-6 rounded-full bg-stone-100 text-stone-600 inline-flex items-center justify-center mr-3 text-xs font-bold">${String.fromCharCode(65 + idx)}</span>${opt}`;
         btn.onclick = () => selectQuizOption(idx);
         optBox.appendChild(btn);
@@ -268,7 +292,7 @@
 
       buttons.forEach((b, i) => {
         b.disabled = true;
-        b.classList.remove("hover:bg-amber-50", "hover:border-amber-400");
+        b.classList.remove("hover:bg-red-50/40", "hover:border-red-800");
         if (i === q.correct) {
           b.className += " bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold";
         } else if (i === idx) {
@@ -306,7 +330,7 @@
 
       const total = currentLesson.quiz.length;
       const percentage = `${Math.round((quizScore / total) * 100)}%`;
-      document.getElementById("result-greeting").textContent = `Great effort, ${studentFName}!`;
+      document.getElementById("result-greeting").textContent = `Great job, ${studentFName}!`;
       document.getElementById("result-score-display").textContent = `${quizScore} / ${total} (${percentage})`;
 
       const syncStatus = document.getElementById("result-sync-status");
@@ -324,7 +348,7 @@
             percentage: percentage
           })
         }).then(() => {
-          syncStatus.textContent = "✓ Results recorded to teacher's sheet!";
+          syncStatus.textContent = "✓ Results recorded to Sunday school sheet!";
           syncStatus.className = "text-xs text-emerald-600 font-semibold mb-6";
         }).catch(() => {
           syncStatus.textContent = "Could not sync result (offline).";
