@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coptic Sunday School Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-stone-100 min-h-screen text-stone-800 antialiased p-3 md:p-6">
+  <div class="max-w-3xl mx-auto">
+    <!-- Header -->
+    <header class="bg-white rounded-2xl shadow-sm border border-stone-200 p-5 mb-4 text-center">
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Coptic Orthodox Church</span>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-2">Sunday School Learning Hub</h1>
+      
+      <!-- Lesson Selector Dropdown -->
+      <div class="mt-4 max-w-md mx-auto">
+        <label class="block text-xs font-semibold text-stone-500 uppercase tracking-wider mb-1">Select Lesson / Topic:</label>
+        <select id="lesson-select" onchange="onLessonChange()" class="w-full p-2.5 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-amber-500 outline-none">
+          <!-- Populated from lessons.json -->
+        </select>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex justify-center gap-2 mt-5 border-t border-stone-100 pt-4">
+        <button id="tab-study-btn" onclick="switchTab('study')" class="px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm">
+          📖 Study Guide
+        </button>
+        <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+          ✍️ Take Quiz
+        </button>
+      </div>
+    </header>
+
+    <!-- Tab 1: Study Guide Container -->
+    <main id="study-container" class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8 space-y-6">
+      <div class="border-b border-stone-100 pb-4">
+        <span id="lesson-badge" class="text-xs font-bold text-amber-800 uppercase tracking-wider"></span>
+        <h2 id="lesson-title" class="text-2xl font-bold text-stone-900 mt-1"></h2>
+        <p id="lesson-date" class="text-xs text-stone-400 mt-0.5"></p>
+      </div>
+
+      <!-- Memory Verse Card -->
+      <div class="bg-amber-50 border-l-4 border-amber-600 p-4 rounded-r-xl">
+        <h3 class="text-xs font-bold text-amber-900 uppercase tracking-wider">Memory Verse</h3>
+        <p id="verse-text" class="text-stone-800 font-serif italic text-base md:text-lg mt-1"></p>
+        <p id="verse-ref" class="text-right text-xs font-bold text-amber-800 mt-2"></p>
+      </div>
+
+      <div id="lesson-intro" class="text-stone-700 leading-relaxed text-sm md:text-base"></div>
+      <div id="lesson-sections" class="space-y-4"></div>
+
+      <!-- Weekly Goals -->
+      <div class="bg-stone-50 border border-stone-200 p-5 rounded-xl">
+        <h3 class="text-sm font-bold text-stone-900 mb-2">🎯 Weekly Spiritual Goals</h3>
+        <ul id="lesson-goals" class="space-y-1.5 text-sm text-stone-600 list-disc list-inside"></ul>
+      </div>
+
+      <div class="text-center pt-4">
+        <button onclick="switchTab('quiz')" class="px-6 py-3 bg-amber-700 hover:bg-amber-800 text-white font-bold text-sm rounded-xl transition shadow">
+          Ready? Take the Quiz →
+        </button>
+      </div>
+    </main>
+
+    <!-- Tab 2: Quiz Container -->
+    <main id="quiz-container" class="hidden bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8">
+      <!-- Screen A: Registration -->
+      <div id="quiz-reg-screen" class="max-w-md mx-auto space-y-4">
+        <div class="text-center mb-4">
+          <h2 class="text-xl font-bold text-stone-900">Student Sign-In</h2>
+          <p class="text-xs text-stone-500 mt-1">Enter your name to begin this week's quiz</p>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">First Name</label>
+          <input type="text" id="student-first" placeholder="e.g. Mark" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-stone-700 mb-1">Last Name</label>
+          <input type="text" id="student-last" placeholder="e.g. Hanna" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm" />
+        </div>
+        <p id="reg-error" class="hidden text-rose-600 text-xs font-bold text-center">Please enter both your first and last name.</p>
+        <button onclick="startActiveQuiz()" class="w-full py-3.5 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl transition shadow">
+          Start Quiz Now
+        </button>
+      </div>
+
+      <!-- Screen B: Question Flow -->
+      <div id="quiz-play-screen" class="hidden max-w-xl mx-auto">
+        <div class="flex justify-between items-center text-xs font-semibold text-stone-400 mb-2">
+          <span id="quiz-progress-text"></span>
+          <span id="quiz-score-text">Score: 0</span>
+        </div>
+        <div class="w-full bg-stone-100 h-2 rounded-full mb-6 overflow-hidden">
+          <div id="quiz-progress-bar" class="bg-amber-600 h-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+
+        <h3 id="quiz-question-title" class="text-lg font-bold text-stone-900 mb-4 min-h-[52px]"></h3>
+        <div id="quiz-options-box" class="space-y-3 mb-6"></div>
+        <div id="quiz-feedback-box" class="hidden p-4 rounded-xl text-sm mb-4 leading-relaxed"></div>
+
+        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden w-full py-3 bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-xl transition shadow">
+          Next Question →
+        </button>
+      </div>
+
+      <!-- Screen C: Quiz Completed -->
+      <div id="quiz-result-screen" class="hidden text-center max-w-md mx-auto py-4">
+        <div class="text-5xl mb-2">🕊️</div>
+        <h2 class="text-2xl font-bold text-stone-900">Quiz Completed!</h2>
+        <p id="result-greeting" class="text-stone-600 text-sm font-medium mt-1"></p>
+        <p id="result-score-display" class="text-2xl text-amber-950 font-black my-4"></p>
+        <p id="result-sync-status" class="text-xs text-stone-400 italic mb-6">Recording your score...</p>
+        <button onclick="resetQuizState()" class="px-6 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl text-sm transition">
+          Retake Quiz
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // -------------------------------------------------------------
+    // 1. PASTE YOUR GOOGLE APPS SCRIPT URL HERE:
+    // -------------------------------------------------------------
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5zFzQ0lxsAO1_8z3GMvWdcM7xS7NKic6DYApakJNh0TLoP34jPDhqXqPLwMJz_rYC/exec";
+
+    let allLessons = [];
+    let currentLesson = null;
+    let currentQIdx = 0;
+    let quizScore = 0;
+    let answered = false;
+    let studentFName = "";
+    let studentLName = "";
+
+    // Load data from lessons.json
+    async function init() {
+      try {
+        const res = await fetch("lessons.json");
+        allLessons = await res.json();
+        populateLessonSelect();
+        renderLesson(allLessons[0]);
+      } catch (err) {
+        console.error("Failed loading lessons.json:", err);
+        document.getElementById("study-container").innerHTML = `<p class="text-rose-600 font-bold text-center">Error loading lessons.json. Ensure the file is present in the repository.</p>`;
+      }
+    }
+
+    function populateLessonSelect() {
+      const sel = document.getElementById("lesson-select");
+      sel.innerHTML = "";
+      allLessons.forEach((l, idx) => {
+        const opt = document.createElement("option");
+        opt.value = l.id;
+        opt.textContent = `${l.title} (${l.date})`;
+        sel.appendChild(opt);
+      });
+    }
+
+    function onLessonChange() {
+      const selId = document.getElementById("lesson-select").value;
+      const found = allLessons.find(l => l.id === selId);
+      if (found) {
+        renderLesson(found);
+        resetQuizState();
+      }
+    }
+
+    function renderLesson(lesson) {
+      currentLesson = lesson;
+      document.getElementById("lesson-badge").textContent = lesson.category || "Sunday School";
+      document.getElementById("lesson-title").textContent = lesson.title;
+      document.getElementById("lesson-date").textContent = lesson.date;
+      document.getElementById("verse-text").textContent = `"${lesson.memoryVerse.text}"`;
+      document.getElementById("verse-ref").textContent = `— ${lesson.memoryVerse.reference}`;
+      document.getElementById("lesson-intro").textContent = lesson.studyGuide.intro;
+
+      const secBox = document.getElementById("lesson-sections");
+      secBox.innerHTML = "";
+      lesson.studyGuide.sections.forEach(sec => {
+        const div = document.createElement("div");
+        div.className = "bg-stone-50 border border-stone-200 p-4 rounded-xl";
+        div.innerHTML = `<h4 class="font-bold text-stone-900 text-sm md:text-base mb-1">${sec.heading}</h4><p class="text-stone-600 text-sm leading-relaxed">${sec.content}</p>`;
+        secBox.appendChild(div);
+      });
+
+      const goalsBox = document.getElementById("lesson-goals");
+      goalsBox.innerHTML = "";
+      lesson.studyGuide.weeklyGoals.forEach(g => {
+        const li = document.createElement("li");
+        li.textContent = g;
+        goalsBox.appendChild(li);
+      });
+    }
+
+    function switchTab(tab) {
+      const studyC = document.getElementById("study-container");
+      const quizC = document.getElementById("quiz-container");
+      const studyBtn = document.getElementById("tab-study-btn");
+      const quizBtn = document.getElementById("tab-quiz-btn");
+
+      if (tab === 'study') {
+        studyC.classList.remove("hidden");
+        quizC.classList.add("hidden");
+        studyBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm";
+        quizBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+      } else {
+        studyC.classList.add("hidden");
+        quizC.classList.remove("hidden");
+        quizBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-amber-700 text-white shadow-sm";
+        studyBtn.className = "px-5 py-2 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+      }
+    }
+
+    function startActiveQuiz() {
+      const f = document.getElementById("student-first").value.trim();
+      const l = document.getElementById("student-last").value.trim();
+      const err = document.getElementById("reg-error");
+
+      if (!f || !l) {
+        err.classList.remove("hidden");
+        return;
+      }
+      err.classList.add("hidden");
+      studentFName = f;
+      studentLName = l;
+
+      document.getElementById("quiz-reg-screen").classList.add("hidden");
+      document.getElementById("quiz-play-screen").classList.remove("hidden");
+      currentQIdx = 0;
+      quizScore = 0;
+      loadQuizQuestion();
+    }
+
+    function loadQuizQuestion() {
+      answered = false;
+      const feedback = document.getElementById("quiz-feedback-box");
+      feedback.className = "hidden p-4 rounded-xl text-sm mb-4 leading-relaxed";
+      feedback.innerHTML = "";
+      document.getElementById("quiz-next-btn").classList.add("hidden");
+
+      const qs = currentLesson.quiz;
+      const q = qs[currentQIdx];
+
+      document.getElementById("quiz-question-title").textContent = q.question;
+      document.getElementById("quiz-progress-text").textContent = `Question ${currentQIdx + 1} of ${qs.length}`;
+      document.getElementById("quiz-progress-bar").style.width = `${((currentQIdx + 1) / qs.length) * 100}%`;
+      document.getElementById("quiz-score-text").textContent = `Score: ${quizScore}`;
+
+      const optBox = document.getElementById("quiz-options-box");
+      optBox.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "w-full text-left p-3.5 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50 transition text-sm font-medium flex items-center";
+        btn.innerHTML = `<span class="w-6 h-6 rounded-full bg-stone-100 text-stone-600 inline-flex items-center justify-center mr-3 text-xs font-bold">${String.fromCharCode(65 + idx)}</span>${opt}`;
+        btn.onclick = () => selectQuizOption(idx);
+        optBox.appendChild(btn);
+      });
+    }
+
+    function selectQuizOption(idx) {
+      if (answered) return;
+      answered = true;
+
+      const q = currentLesson.quiz[currentQIdx];
+      const buttons = document.getElementById("quiz-options-box").querySelectorAll("button");
+      const feedback = document.getElementById("quiz-feedback-box");
+
+      buttons.forEach((b, i) => {
+        b.disabled = true;
+        b.classList.remove("hover:bg-amber-50", "hover:border-amber-400");
+        if (i === q.correct) {
+          b.className += " bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold";
+        } else if (i === idx) {
+          b.className += " bg-rose-50 border-rose-400 text-rose-800";
+        } else {
+          b.className += " opacity-40";
+        }
+      });
+
+      if (idx === q.correct) {
+        quizScore++;
+        document.getElementById("quiz-score-text").textContent = `Score: ${quizScore}`;
+        feedback.className = "p-4 rounded-xl text-sm mb-4 leading-relaxed bg-emerald-50 text-emerald-900 border border-emerald-200 block";
+        feedback.innerHTML = `<strong>✓ Correct!</strong> ${q.explanation}`;
+      } else {
+        feedback.className = "p-4 rounded-xl text-sm mb-4 leading-relaxed bg-rose-50 text-rose-900 border border-rose-200 block";
+        feedback.innerHTML = `<strong>✗ Incorrect.</strong> ${q.explanation}`;
+      }
+
+      document.getElementById("quiz-next-btn").classList.remove("hidden");
+    }
+
+    function nextQuestion() {
+      currentQIdx++;
+      if (currentQIdx < currentLesson.quiz.length) {
+        loadQuizQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      document.getElementById("quiz-play-screen").classList.add("hidden");
+      document.getElementById("quiz-result-screen").classList.remove("hidden");
+
+      const total = currentLesson.quiz.length;
+      const percentage = `${Math.round((quizScore / total) * 100)}%`;
+      document.getElementById("result-greeting").textContent = `Great effort, ${studentFName}!`;
+      document.getElementById("result-score-display").textContent = `${quizScore} / ${total} (${percentage})`;
+
+      const syncStatus = document.getElementById("result-sync-status");
+      if (SCRIPT_URL && !SCRIPT_URL.includes("PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE")) {
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            timestamp: new Date().toLocaleString(),
+            topic: currentLesson.title,
+            firstName: studentFName,
+            lastName: studentLName,
+            score: `${quizScore} / ${total}`,
+            percentage: percentage
+          })
+        }).then(() => {
+          syncStatus.textContent = "✓ Results recorded to teacher's sheet!";
+          syncStatus.className = "text-xs text-emerald-600 font-semibold mb-6";
+        }).catch(() => {
+          syncStatus.textContent = "Could not sync result (offline).";
+        });
+      } else {
+        syncStatus.textContent = "";
+      }
+    }
+
+    function resetQuizState() {
+      document.getElementById("quiz-result-screen").classList.add("hidden");
+      document.getElementById("quiz-play-screen").classList.add("hidden");
+      document.getElementById("quiz-reg-screen").classList.remove("hidden");
+      currentQIdx = 0;
+      quizScore = 0;
+    }
+
+    init();
+  </script>
+</body>
+</html>
