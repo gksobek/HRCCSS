@@ -1,0 +1,91 @@
+[
+  {
+    "id": "st-mary-fast",
+    "title": "The Fast of Saint Mary & The Holy Apostles",
+    "date": "August 2026",
+    "category": "Feasts & Fasts",
+    "memoryVerse": {
+      "text": "For behold, from now on all generations will call me blessed; for he who is mighty has done great things for me, and holy is his name.",
+      "reference": "Luke 1:48–49 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "The Coptic Orthodox Church fasts for 15 days (1 Mesore to 16 Mesore / August 7 to August 22) leading up to the Feast of the Assumption of the Body of Saint Mary. This fast was instituted directly by the Holy Apostles, who desired to witness the bodily assumption that had been revealed only to Saint Thomas.",
+      "sections": [
+        {
+          "heading": "1. The Departure of Saint Mary (21 Tobi)",
+          "content": "When Saint Mary departed this world, the Holy Spirit gathered the Apostles from all over the world to Jerusalem. The Lord received her pure soul, and the Apostles buried her pure body in the Garden of Gethsemane."
+        },
+        {
+          "heading": "2. Saint Thomas and the Holy Girdle",
+          "content": "Saint Thomas was away preaching in India during her burial. Returning on a cloud, he saw angels carrying Saint Mary's luminous body ascending to heaven. In confirmation of this vision, her holy girdle (belt) dropped down into his hands."
+        },
+        {
+          "heading": "3. The Empty Tomb & The 15-Day Fast",
+          "content": "When Thomas arrived in Jerusalem and told the Apostles what he saw, they went to Gethsemane and opened the tomb. The tomb was empty, filled only with the sweet scent of incense. The Apostles then fasted and prayed for 15 days (1–15 Mesore) until the Lord revealed her bodily assumption to all of them on 16 Mesore."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray the 3rd or Compline Agpeya prayer daily with contemplation on St. Mary.",
+        "Read Luke chapters 1 and 2 this week.",
+        "Practice quietness and humility by avoiding gossip and complaints."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "Why did the Apostles fast for 15 days according to Coptic tradition?",
+        "options": [
+          "To pray for rain during a drought",
+          "To see the bodily assumption of St. Mary revealed to St. Thomas",
+          "Because they were mourning the departure of St. Peter",
+          "To prepare for the Council of Nicaea"
+        ],
+        "correct": 1,
+        "explanation": "After Saint Thomas saw Saint Mary's bodily assumption in the clouds, the other Apostles desired to witness this grace and fasted for 15 days until the Lord revealed her body to them."
+      },
+      {
+        "question": "What physical token did Saint Mary give to Saint Thomas from the clouds?",
+        "options": [
+          "Her veil",
+          "Her prayer book",
+          "Her holy girdle (belt)",
+          "Her sandals"
+        ],
+        "correct": 2,
+        "explanation": "Saint Thomas asked for a blessing as he saw her ascending, and her holy girdle (belt) dropped into his hands."
+      },
+      {
+        "question": "Where did the Apostles bury Saint Mary's body following her departure?",
+        "options": [
+          "Bethlehem",
+          "Gethsemane",
+          "Nazareth",
+          "Alexandria"
+        ],
+        "correct": 1,
+        "explanation": "The Apostles carried her holy body with praise and hymns and buried her in the Garden of Gethsemane."
+      },
+      {
+        "question": "On which Coptic date is the Feast of the Bodily Assumption of St. Mary celebrated?",
+        "options": [
+          "21 Tobi",
+          "1 Mesore",
+          "16 Mesore",
+          "29 Koiak"
+        ],
+        "correct": 2,
+        "explanation": "Her departure (Dormition) is remembered on 21 Tobi, but the Assumption of her body is celebrated on 16 Mesore (August 22)."
+      },
+      {
+        "question": "Which disciple was entrusted with caring for Saint Mary at the Cross?",
+        "options": [
+          "Saint Thomas",
+          "Saint Peter",
+          "Saint John the Beloved",
+          "Saint James"
+        ],
+        "correct": 2,
+        "explanation": "In John 19:26-27, the Lord Jesus said to John, 'Behold, your mother!' and from that hour John took her into his home."
+      }
+    ]
+  }
+]
