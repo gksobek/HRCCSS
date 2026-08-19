@@ -3,149 +3,209 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunday School Learning Hub | The Holy Resurrection Coptic Church</title>
+  <title>Learning Hub | The Holy Resurrection Coptic Church</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Smooth transitions for tab switching */
+    .fade-in { animation: fadeIn 0.3s ease-in-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
 </head>
-<body class="bg-stone-100 min-h-screen text-stone-800 antialiased p-3 md:p-6 flex flex-col justify-between">
-  <div class="max-w-3xl mx-auto w-full">
-    
-    <!-- Church Header -->
-    <header class="bg-white rounded-2xl shadow-sm border border-stone-200 p-5 md:p-6 mb-4 text-center">
-      <div class="flex flex-col items-center justify-center">
-        <!-- Logo -->
+<body class="bg-stone-100 min-h-screen text-stone-800 antialiased flex flex-col items-center py-6 px-4 md:py-10">
+
+  <!-- Main App Container -->
+  <div class="max-w-4xl w-full flex flex-col gap-6">
+
+    <!-- ==========================================
+         HEADER & NAVIGATION MODULE
+         ========================================== -->
+    <header class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8">
+      
+      <!-- Church Branding -->
+      <div class="flex flex-col items-center text-center border-b border-stone-100 pb-6">
         <a href="https://theholyresurrection.com/" target="_blank" rel="noopener noreferrer">
-          <img src="logo.png" alt="The Holy Resurrection Coptic Church Logo" class="w-24 h-24 md:w-28 md:h-28 object-contain mb-3 drop-shadow-sm hover:opacity-95 transition" />
+          <img src="logo.png" alt="THRCC Logo" class="w-24 h-24 md:w-28 md:h-28 object-contain mb-4 hover:opacity-90 transition-opacity" onerror="this.src='https://placehold.co/100x100/f5f5f4/78716c?text=THRCC'"/>
         </a>
-        
-        <span class="text-[11px] font-bold uppercase tracking-wider text-red-900 bg-red-50 border border-red-200 px-3 py-0.5 rounded-full mb-1.5">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-red-900 bg-red-50 border border-red-200 px-3 py-1 rounded-full mb-2">
           Diocese of Ohio, Michigan, & Indiana
         </span>
-        <h1 class="text-xl md:text-2xl font-black text-stone-900 leading-tight">
-          The Holy Resurrection Coptic Church
-        </h1>
-        <p class="text-xs text-stone-500 font-medium mt-0.5">Sunday School Learning Hub & Curriculum</p>
-      </div>
-      
-      <!-- Lesson Selector Dropdown -->
-      <div class="mt-5 max-w-md mx-auto">
-        <label class="block text-xs font-bold text-stone-500 uppercase tracking-wider mb-1 text-left">Select Lesson / Topic:</label>
-        <select id="lesson-select" onchange="onLessonChange()" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-red-900 outline-none">
-          <!-- Populated dynamically from lessons.json -->
-        </select>
+        <h1 class="text-2xl md:text-3xl font-black text-stone-900 tracking-tight">The Holy Resurrection</h1>
+        <p class="text-sm font-semibold text-stone-500 mt-1 uppercase tracking-widest">Learning Hub</p>
       </div>
 
-      <!-- Navigation Tabs -->
-      <div class="flex justify-center gap-2 mt-5 border-t border-stone-100 pt-4">
-        <button id="tab-study-btn" onclick="switchTab('study')" class="px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm">
+      <!-- The 3-Dropdown Filter System -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+        <!-- Track Selection -->
+        <div>
+          <label class="block text-xs font-bold text-stone-500 uppercase tracking-wider mb-1.5 ml-1">1. Select Track</label>
+          <select id="track-select" onchange="filterGrades()" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-red-900 outline-none transition-shadow cursor-pointer">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+
+        <!-- Grade Selection -->
+        <div>
+          <label class="block text-xs font-bold text-stone-500 uppercase tracking-wider mb-1.5 ml-1">2. Select Grade</label>
+          <select id="grade-select" onchange="filterTopics()" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-red-900 outline-none transition-shadow cursor-pointer">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+
+        <!-- Topic Selection -->
+        <div>
+          <label class="block text-xs font-bold text-stone-500 uppercase tracking-wider mb-1.5 ml-1">3. Select Lesson</label>
+          <select id="topic-select" onchange="renderSelectedLesson()" class="w-full p-3 bg-stone-50 border border-stone-300 rounded-xl text-sm font-semibold text-stone-800 focus:ring-2 focus:ring-red-900 outline-none transition-shadow cursor-pointer">
+            <!-- Populated by JS -->
+          </select>
+        </div>
+      </div>
+
+      <!-- App Tabs (Study Guide / Quiz) -->
+      <div class="flex justify-center gap-3 mt-8">
+        <button id="tab-study-btn" onclick="switchTab('study')" class="flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all shadow-md bg-red-950 text-white">
           📖 Study Guide
         </button>
-        <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200">
+        <button id="tab-quiz-btn" onclick="switchTab('quiz')" class="flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-800">
           ✍️ Take Quiz
         </button>
       </div>
     </header>
 
-    <!-- Tab 1: Study Guide Container -->
-    <main id="study-container" class="bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8 space-y-6">
-      <div class="border-b border-stone-100 pb-4">
-        <span id="lesson-badge" class="text-xs font-bold text-red-900 uppercase tracking-wider"></span>
-        <h2 id="lesson-title" class="text-2xl font-bold text-stone-900 mt-1"></h2>
-        <p id="lesson-date" class="text-xs text-stone-400 mt-0.5"></p>
+
+    <!-- ==========================================
+         TAB 1: STUDY GUIDE
+         ========================================== -->
+    <main id="study-container" class="fade-in bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-10 space-y-8">
+      
+      <!-- Lesson Header -->
+      <div class="text-center md:text-left border-b border-stone-100 pb-6">
+        <span id="lesson-badge" class="text-xs font-bold text-red-900 uppercase tracking-widest bg-red-50 px-2 py-1 rounded"></span>
+        <h2 id="lesson-title" class="text-2xl md:text-3xl font-black text-stone-900 mt-3 leading-tight"></h2>
+        <p id="lesson-date" class="text-sm font-medium text-stone-400 mt-2"></p>
       </div>
 
-      <!-- Memory Verse Card -->
-      <div class="bg-red-50/60 border-l-4 border-red-900 p-4 rounded-r-xl">
-        <h3 class="text-xs font-bold text-red-950 uppercase tracking-wider">Memory Verse</h3>
-        <p id="verse-text" class="text-stone-800 font-serif italic text-base md:text-lg mt-1"></p>
-        <p id="verse-ref" class="text-right text-xs font-bold text-red-900 mt-2"></p>
+      <!-- Memory Verse -->
+      <div id="memory-verse-container" class="bg-red-50/80 border-l-4 border-red-900 p-5 md:p-6 rounded-r-2xl shadow-sm">
+        <h3 class="text-xs font-bold text-red-950 uppercase tracking-widest mb-2 flex items-center gap-2">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"></path></svg>
+          Memory Verse
+        </h3>
+        <p id="verse-text" class="text-stone-800 font-serif italic text-lg md:text-xl leading-relaxed"></p>
+        <p id="verse-ref" class="text-right text-sm font-bold text-red-900 mt-3"></p>
       </div>
 
-      <div id="lesson-intro" class="text-stone-700 leading-relaxed text-sm md:text-base"></div>
-      <div id="lesson-sections" class="space-y-4"></div>
+      <!-- Content Sections -->
+      <div id="lesson-intro" class="text-stone-600 leading-relaxed text-base md:text-lg"></div>
+      <div id="lesson-sections" class="space-y-5"></div>
 
       <!-- Weekly Goals -->
-      <div class="bg-stone-50 border border-stone-200 p-5 rounded-xl">
-        <h3 class="text-sm font-bold text-stone-900 mb-2">🎯 Weekly Spiritual Goals</h3>
-        <ul id="lesson-goals" class="space-y-1.5 text-sm text-stone-600 list-disc list-inside"></ul>
+      <div id="goals-container" class="bg-stone-50 border border-stone-200 p-6 rounded-2xl">
+        <h3 class="text-sm font-bold text-stone-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <span>🎯</span> Weekly Spiritual Goals
+        </h3>
+        <ul id="lesson-goals" class="space-y-2.5 text-stone-600 list-disc list-outside ml-5 marker:text-red-900 font-medium"></ul>
       </div>
 
-      <div class="text-center pt-4">
-        <button onclick="switchTab('quiz')" class="px-6 py-3 bg-red-950 hover:bg-red-900 text-white font-bold text-sm rounded-xl transition shadow">
+      <!-- Call to Action -->
+      <div class="text-center pt-6">
+        <button onclick="switchTab('quiz')" class="px-8 py-4 bg-red-950 hover:bg-red-900 text-white font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
           Ready? Take the Quiz →
         </button>
       </div>
     </main>
 
-    <!-- Tab 2: Quiz Container -->
-    <main id="quiz-container" class="hidden bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-8">
-      <!-- Screen A: Registration -->
-      <div id="quiz-reg-screen" class="max-w-md mx-auto space-y-4">
-        <div class="text-center mb-4">
-          <h2 class="text-xl font-bold text-stone-900">Student Sign-In</h2>
-          <p class="text-xs text-stone-500 mt-1">Enter your name to submit your score to your Sunday school servant</p>
+
+    <!-- ==========================================
+         TAB 2: QUIZ
+         ========================================== -->
+    <main id="quiz-container" class="hidden fade-in bg-white rounded-2xl shadow-sm border border-stone-200 p-6 md:p-10">
+      
+      <!-- SCREEN A: Sign In -->
+      <div id="quiz-reg-screen" class="max-w-md mx-auto space-y-6 py-4">
+        <div class="text-center">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 text-red-900 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+          </div>
+          <h2 class="text-2xl font-black text-stone-900">Student Sign-In</h2>
+          <p class="text-sm text-stone-500 mt-2">Enter your name to submit your score to your servant's gradebook.</p>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-stone-700 mb-1">First Name</label>
-          <input type="text" id="student-first" placeholder="e.g. Mark" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-sm" />
+        
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-stone-600 uppercase tracking-wider mb-1.5 ml-1">First Name</label>
+            <input type="text" id="student-first" placeholder="e.g. Mark" class="w-full p-4 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-base shadow-sm transition-shadow" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-stone-600 uppercase tracking-wider mb-1.5 ml-1">Last Name</label>
+            <input type="text" id="student-last" placeholder="e.g. Hanna" class="w-full p-4 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-base shadow-sm transition-shadow" />
+          </div>
         </div>
-        <div>
-          <label class="block text-xs font-bold text-stone-700 mb-1">Last Name</label>
-          <input type="text" id="student-last" placeholder="e.g. Hanna" class="w-full p-3 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-red-900 text-sm" />
-        </div>
-        <p id="reg-error" class="hidden text-rose-600 text-xs font-bold text-center">Please enter both your first and last name.</p>
-        <button onclick="startActiveQuiz()" class="w-full py-3.5 bg-red-950 hover:bg-red-900 text-white font-bold rounded-xl transition shadow">
+        
+        <p id="reg-error" class="hidden text-rose-600 text-sm font-bold text-center bg-rose-50 p-3 rounded-lg border border-rose-200">Please enter both your first and last name.</p>
+        
+        <button onclick="startActiveQuiz()" class="w-full py-4 bg-red-950 hover:bg-red-900 text-white font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg">
           Start Quiz Now
         </button>
       </div>
 
-      <!-- Screen B: Question Flow -->
-      <div id="quiz-play-screen" class="hidden max-w-xl mx-auto">
-        <div class="flex justify-between items-center text-xs font-semibold text-stone-400 mb-2">
+      <!-- SCREEN B: Question Flow -->
+      <div id="quiz-play-screen" class="hidden max-w-2xl mx-auto py-2">
+        <!-- Progress Header -->
+        <div class="flex justify-between items-end text-sm font-bold text-stone-500 uppercase tracking-wider mb-3">
           <span id="quiz-progress-text"></span>
-          <span id="quiz-score-text">Score: 0</span>
+          <span id="quiz-score-text" class="text-red-900 bg-red-50 px-3 py-1 rounded-lg">Score: 0</span>
         </div>
-        <div class="w-full bg-stone-100 h-2 rounded-full mb-6 overflow-hidden">
-          <div id="quiz-progress-bar" class="bg-red-900 h-full transition-all duration-300" style="width: 0%"></div>
+        <!-- Progress Bar -->
+        <div class="w-full bg-stone-100 h-2.5 rounded-full mb-8 overflow-hidden shadow-inner">
+          <div id="quiz-progress-bar" class="bg-red-900 h-full transition-all duration-500 ease-out" style="width: 0%"></div>
         </div>
 
-        <h3 id="quiz-question-title" class="text-lg font-bold text-stone-900 mb-4 min-h-[52px]"></h3>
-        <div id="quiz-options-box" class="space-y-3 mb-6"></div>
-        <div id="quiz-feedback-box" class="hidden p-4 rounded-xl text-sm mb-4 leading-relaxed"></div>
+        <h3 id="quiz-question-title" class="text-xl md:text-2xl font-bold text-stone-900 mb-6 leading-tight min-h-[60px]"></h3>
+        
+        <!-- Options Grid -->
+        <div id="quiz-options-box" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"></div>
+        
+        <!-- Feedback Box -->
+        <div id="quiz-feedback-box" class="hidden p-5 rounded-xl text-base mb-6 leading-relaxed border shadow-sm"></div>
 
-        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden w-full py-3 bg-red-950 hover:bg-red-900 text-white font-bold rounded-xl transition shadow">
+        <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden w-full py-4 bg-red-950 hover:bg-red-900 text-white font-bold text-sm uppercase tracking-wider rounded-xl transition-all shadow-md">
           Next Question →
         </button>
       </div>
 
-      <!-- Screen C: Quiz Completed -->
-      <div id="quiz-result-screen" class="hidden text-center max-w-md mx-auto py-4">
-        <div class="text-5xl mb-2">🕊️</div>
-        <h2 class="text-2xl font-bold text-stone-900">Quiz Completed!</h2>
-        <p id="result-greeting" class="text-stone-600 text-sm font-medium mt-1"></p>
-        <p id="result-score-display" class="text-2xl text-red-950 font-black my-4"></p>
-        <p id="result-sync-status" class="text-xs text-stone-400 italic mb-6">Recording your score...</p>
-        <button onclick="resetQuizState()" class="px-6 py-2.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold rounded-xl text-sm transition">
+      <!-- SCREEN C: Results -->
+      <div id="quiz-result-screen" class="hidden text-center max-w-md mx-auto py-8">
+        <div class="text-6xl mb-4 animate-bounce">🕊️</div>
+        <h2 class="text-3xl font-black text-stone-900">Quiz Completed!</h2>
+        <p id="result-greeting" class="text-stone-500 text-lg font-medium mt-2"></p>
+        
+        <div class="bg-stone-50 border border-stone-200 rounded-2xl p-8 my-8 shadow-inner">
+          <p class="text-sm font-bold text-stone-500 uppercase tracking-wider mb-2">Final Score</p>
+          <p id="result-score-display" class="text-5xl text-red-950 font-black"></p>
+        </div>
+
+        <p id="result-sync-status" class="text-sm text-stone-500 italic mb-8 flex items-center justify-center gap-2">
+          <svg class="animate-spin h-4 w-4 text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+          Recording to Gradebook...
+        </p>
+        
+        <button onclick="resetQuizState()" class="px-8 py-3 bg-white border-2 border-stone-200 hover:border-stone-300 text-stone-700 font-bold uppercase tracking-wider rounded-xl text-sm transition-all shadow-sm hover:shadow">
           Retake Quiz
         </button>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center mt-8 mb-4 text-xs text-stone-500 space-y-1">
-      <p class="font-semibold text-stone-700">The Holy Resurrection Coptic Orthodox Church</p>
+    <footer class="text-center pb-8 pt-4 text-xs font-medium text-stone-400 space-y-1">
+      <p class="uppercase tracking-widest text-stone-500">The Holy Resurrection Coptic Orthodox Church</p>
       <p>12549 Old Stone Dr, Indianapolis, IN 46236</p>
-      <p>
-        <a href="https://theholyresurrection.com/" target="_blank" rel="noopener noreferrer" class="text-red-900 hover:underline font-bold">
-          theholyresurrection.com
-        </a>
-      </p>
     </footer>
 
   </div>
 
   <script>
     // -------------------------------------------------------------
-    // 1. PASTE YOUR GOOGLE APPS SCRIPT URL HERE:
+    // PASTE YOUR GOOGLE APPS SCRIPT URL HERE:
     // -------------------------------------------------------------
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5zFzQ0lxsAO1_8z3GMvWdcM7xS7NKic6DYApakJNh0TLoP34jPDhqXqPLwMJz_rYC/exec";
 
@@ -161,59 +221,135 @@
       try {
         const res = await fetch("lessons.json");
         allLessons = await res.json();
-        populateLessonSelect();
-        renderLesson(allLessons[0]);
+        
+        if(allLessons.length > 0) {
+          populateTracks();
+        } else {
+          showError("The lessons.json file is empty.");
+        }
       } catch (err) {
         console.error("Failed loading lessons.json:", err);
-        document.getElementById("study-container").innerHTML = `<p class="text-rose-600 font-bold text-center">Error loading lessons.json. Ensure the file is present in the repository.</p>`;
+        showError("Could not load lessons. Ensure 'lessons.json' is in the repository.");
       }
     }
 
-    function populateLessonSelect() {
-      const sel = document.getElementById("lesson-select");
-      sel.innerHTML = "";
-      allLessons.forEach((l) => {
+    function showError(msg) {
+      document.getElementById("study-container").innerHTML = `<div class="p-8 bg-rose-50 border border-rose-200 rounded-xl text-center"><p class="text-rose-700 font-bold">${msg}</p></div>`;
+    }
+
+    // --- Dropdown Filtering Logic --- //
+
+    function populateTracks() {
+      const trackSet = new Set(allLessons.map(l => l.track || l.category || "General"));
+      const trackSelect = document.getElementById("track-select");
+      trackSelect.innerHTML = "";
+      
+      trackSet.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        trackSelect.appendChild(opt);
+      });
+      
+      filterGrades(); // Cascade to next dropdown
+    }
+
+    function filterGrades() {
+      const selectedTrack = document.getElementById("track-select").value;
+      const filteredByTrack = allLessons.filter(l => (l.track || l.category || "General") === selectedTrack);
+      
+      const gradeSet = new Set(filteredByTrack.map(l => l.grade || "All Grades"));
+      const gradeSelect = document.getElementById("grade-select");
+      gradeSelect.innerHTML = "";
+      
+      gradeSet.forEach(g => {
+        const opt = document.createElement("option");
+        opt.value = g;
+        opt.textContent = g;
+        gradeSelect.appendChild(opt);
+      });
+
+      filterTopics(); // Cascade to next dropdown
+    }
+
+    function filterTopics() {
+      const selectedTrack = document.getElementById("track-select").value;
+      const selectedGrade = document.getElementById("grade-select").value;
+      
+      const filteredLessons = allLessons.filter(l => 
+        (l.track || l.category || "General") === selectedTrack && 
+        (l.grade || "All Grades") === selectedGrade
+      );
+
+      const topicSelect = document.getElementById("topic-select");
+      topicSelect.innerHTML = "";
+      
+      filteredLessons.forEach(l => {
         const opt = document.createElement("option");
         opt.value = l.id;
-        opt.textContent = `${l.title} (${l.date})`;
-        sel.appendChild(opt);
+        opt.textContent = l.title;
+        topicSelect.appendChild(opt);
       });
+
+      renderSelectedLesson(); // Finally render the chosen lesson
     }
 
-    function onLessonChange() {
-      const selId = document.getElementById("lesson-select").value;
-      const found = allLessons.find(l => l.id === selId);
-      if (found) {
-        renderLesson(found);
-        resetQuizState();
-      }
-    }
+    // --- UI Rendering --- //
 
-    function renderLesson(lesson) {
+    function renderSelectedLesson() {
+      const selectedId = document.getElementById("topic-select").value;
+      const lesson = allLessons.find(l => l.id === selectedId);
+      
+      if (!lesson) return;
       currentLesson = lesson;
-      document.getElementById("lesson-badge").textContent = lesson.category || "Sunday School Lesson";
+
+      // Header Info
+      document.getElementById("lesson-badge").textContent = lesson.category || lesson.track || "Curriculum";
       document.getElementById("lesson-title").textContent = lesson.title;
-      document.getElementById("lesson-date").textContent = lesson.date;
-      document.getElementById("verse-text").textContent = `"${lesson.memoryVerse.text}"`;
-      document.getElementById("verse-ref").textContent = `— ${lesson.memoryVerse.reference}`;
-      document.getElementById("lesson-intro").textContent = lesson.studyGuide.intro;
+      document.getElementById("lesson-date").textContent = lesson.date || "";
 
-      const secBox = document.getElementById("lesson-sections");
-      secBox.innerHTML = "";
-      lesson.studyGuide.sections.forEach(sec => {
-        const div = document.createElement("div");
-        div.className = "bg-stone-50 border border-stone-200 p-4 rounded-xl";
-        div.innerHTML = `<h4 class="font-bold text-stone-900 text-sm md:text-base mb-1">${sec.heading}</h4><p class="text-stone-600 text-sm leading-relaxed">${sec.content}</p>`;
-        secBox.appendChild(div);
-      });
+      // Memory Verse (Hide if missing)
+      const verseBox = document.getElementById("memory-verse-container");
+      if(lesson.memoryVerse && lesson.memoryVerse.text) {
+        verseBox.classList.remove("hidden");
+        document.getElementById("verse-text").textContent = `"${lesson.memoryVerse.text}"`;
+        document.getElementById("verse-ref").textContent = `— ${lesson.memoryVerse.reference}`;
+      } else {
+        verseBox.classList.add("hidden");
+      }
 
-      const goalsBox = document.getElementById("lesson-goals");
-      goalsBox.innerHTML = "";
-      lesson.studyGuide.weeklyGoals.forEach(g => {
-        const li = document.createElement("li");
-        li.textContent = g;
-        goalsBox.appendChild(li);
-      });
+      // Study Guide
+      if (lesson.studyGuide) {
+        document.getElementById("lesson-intro").innerHTML = lesson.studyGuide.intro || "";
+        
+        const secBox = document.getElementById("lesson-sections");
+        secBox.innerHTML = "";
+        if(lesson.studyGuide.sections) {
+          lesson.studyGuide.sections.forEach(sec => {
+            const div = document.createElement("div");
+            div.className = "bg-stone-50/50 border border-stone-200 p-5 md:p-6 rounded-2xl shadow-sm";
+            div.innerHTML = `<h4 class="font-bold text-stone-900 text-lg mb-2">${sec.heading}</h4><p class="text-stone-600 text-base leading-relaxed">${sec.content}</p>`;
+            secBox.appendChild(div);
+          });
+        }
+
+        // Goals (Hide if missing)
+        const goalsBox = document.getElementById("goals-container");
+        const goalsList = document.getElementById("lesson-goals");
+        goalsList.innerHTML = "";
+        if(lesson.studyGuide.weeklyGoals && lesson.studyGuide.weeklyGoals.length > 0) {
+          goalsBox.classList.remove("hidden");
+          lesson.studyGuide.weeklyGoals.forEach(g => {
+            const li = document.createElement("li");
+            li.textContent = g;
+            goalsList.appendChild(li);
+          });
+        } else {
+          goalsBox.classList.add("hidden");
+        }
+      }
+
+      resetQuizState();
     }
 
     function switchTab(tab) {
@@ -225,15 +361,17 @@
       if (tab === 'study') {
         studyC.classList.remove("hidden");
         quizC.classList.add("hidden");
-        studyBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm";
-        quizBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+        studyBtn.className = "flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all shadow-md bg-red-950 text-white";
+        quizBtn.className = "flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-800";
       } else {
         studyC.classList.add("hidden");
         quizC.classList.remove("hidden");
-        quizBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-red-950 text-white shadow-sm";
-        studyBtn.className = "px-5 py-2.5 rounded-xl font-bold text-sm transition bg-stone-100 text-stone-600 hover:bg-stone-200";
+        quizBtn.className = "flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all shadow-md bg-red-950 text-white";
+        studyBtn.className = "flex-1 max-w-[200px] py-3 rounded-xl font-bold text-sm transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-800";
       }
     }
+
+    // --- Quiz Logic --- //
 
     function startActiveQuiz() {
       const f = document.getElementById("student-first").value.trim();
@@ -258,9 +396,13 @@
     function loadQuizQuestion() {
       answered = false;
       const feedback = document.getElementById("quiz-feedback-box");
-      feedback.className = "hidden p-4 rounded-xl text-sm mb-4 leading-relaxed";
-      feedback.innerHTML = "";
+      feedback.className = "hidden";
       document.getElementById("quiz-next-btn").classList.add("hidden");
+
+      if(!currentLesson.quiz || currentLesson.quiz.length === 0) {
+         document.getElementById("quiz-question-title").textContent = "No quiz available for this lesson.";
+         return;
+      }
 
       const qs = currentLesson.quiz;
       const q = qs[currentQIdx];
@@ -275,8 +417,8 @@
 
       q.options.forEach((opt, idx) => {
         const btn = document.createElement("button");
-        btn.className = "w-full text-left p-3.5 rounded-xl border border-stone-200 hover:border-red-800 hover:bg-red-50/40 transition text-sm font-medium flex items-center";
-        btn.innerHTML = `<span class="w-6 h-6 rounded-full bg-stone-100 text-stone-600 inline-flex items-center justify-center mr-3 text-xs font-bold">${String.fromCharCode(65 + idx)}</span>${opt}`;
+        btn.className = "w-full text-left p-5 rounded-xl border-2 border-stone-200 hover:border-red-900 hover:bg-red-50/50 transition-all text-base font-semibold flex items-center bg-white shadow-sm hover:shadow";
+        btn.innerHTML = `<span class="flex-shrink-0 w-8 h-8 rounded-full border-2 border-stone-300 text-stone-500 flex items-center justify-center mr-4 text-sm font-black uppercase">${String.fromCharCode(65 + idx)}</span>${opt}`;
         btn.onclick = () => selectQuizOption(idx);
         optBox.appendChild(btn);
       });
@@ -292,23 +434,27 @@
 
       buttons.forEach((b, i) => {
         b.disabled = true;
-        b.classList.remove("hover:bg-red-50/40", "hover:border-red-800");
+        b.classList.remove("hover:border-red-900", "hover:bg-red-50/50", "hover:shadow");
+        const letterBadge = b.querySelector('span');
+        
         if (i === q.correct) {
-          b.className += " bg-emerald-50 border-emerald-500 text-emerald-900 font-semibold";
+          b.className += " bg-emerald-50 border-emerald-500 text-emerald-950";
+          letterBadge.className = "flex-shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center mr-4 text-sm font-black";
         } else if (i === idx) {
-          b.className += " bg-rose-50 border-rose-400 text-rose-800";
+          b.className += " bg-rose-50 border-rose-400 text-rose-950";
+          letterBadge.className = "flex-shrink-0 w-8 h-8 rounded-full bg-rose-500 text-white flex items-center justify-center mr-4 text-sm font-black";
         } else {
-          b.className += " opacity-40";
+          b.className += " opacity-40 bg-stone-50";
         }
       });
 
       if (idx === q.correct) {
         quizScore++;
         document.getElementById("quiz-score-text").textContent = `Score: ${quizScore}`;
-        feedback.className = "p-4 rounded-xl text-sm mb-4 leading-relaxed bg-emerald-50 text-emerald-900 border border-emerald-200 block";
+        feedback.className = "p-5 rounded-xl text-base font-medium mb-6 leading-relaxed bg-emerald-100 text-emerald-900 border border-emerald-300 block fade-in";
         feedback.innerHTML = `<strong>✓ Correct!</strong> ${q.explanation}`;
       } else {
-        feedback.className = "p-4 rounded-xl text-sm mb-4 leading-relaxed bg-rose-50 text-rose-900 border border-rose-200 block";
+        feedback.className = "p-5 rounded-xl text-base font-medium mb-6 leading-relaxed bg-rose-100 text-rose-900 border border-rose-300 block fade-in";
         feedback.innerHTML = `<strong>✗ Incorrect.</strong> ${q.explanation}`;
       }
 
@@ -334,6 +480,11 @@
       document.getElementById("result-score-display").textContent = `${quizScore} / ${total} (${percentage})`;
 
       const syncStatus = document.getElementById("result-sync-status");
+      
+      // Grab the dropdown values for the Google Sheet!
+      const selectedTrack = document.getElementById("track-select").value;
+      const selectedGrade = document.getElementById("grade-select").value;
+
       if (SCRIPT_URL && !SCRIPT_URL.includes("PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE")) {
         fetch(SCRIPT_URL, {
           method: "POST",
@@ -341,6 +492,8 @@
           headers: { "Content-Type": "text/plain" },
           body: JSON.stringify({
             timestamp: new Date().toLocaleString(),
+            track: selectedTrack,
+            grade: selectedGrade,
             topic: currentLesson.title,
             firstName: studentFName,
             lastName: studentLName,
@@ -348,13 +501,12 @@
             percentage: percentage
           })
         }).then(() => {
-          syncStatus.textContent = "✓ Results recorded to Sunday school sheet!";
-          syncStatus.className = "text-xs text-emerald-600 font-semibold mb-6";
+          syncStatus.innerHTML = `<span class="text-emerald-600 bg-emerald-50 px-4 py-2 rounded-lg border border-emerald-200 font-bold">✓ Score saved to ${selectedGrade} Gradebook!</span>`;
         }).catch(() => {
-          syncStatus.textContent = "Could not sync result (offline).";
+          syncStatus.textContent = "Could not sync result (offline). Show this screen to your servant.";
         });
       } else {
-        syncStatus.textContent = "";
+        syncStatus.textContent = "Google Script URL not configured.";
       }
     }
 
@@ -366,6 +518,7 @@
       quizScore = 0;
     }
 
+    // Start App
     init();
   </script>
 </body>
