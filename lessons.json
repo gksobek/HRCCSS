@@ -1,95 +1,865 @@
 [
   {
-    "id": "st-mary-fast",
-    "title": "Lesson 1: The Fast of Saint Mary",
-    "date": "August 16th, 2026",
-    "category": "Coptic Feasts & Fasts",
+    "id": "mem-pre-k",
+    "title": "Pre-K: The Sign of the Cross & The Lord's Prayer",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
     "memoryVerse": {
-      "text": "For behold, from now on all generations will call me blessed; for he who is mighty has done great things for me, and holy is his name.",
-      "reference": "Luke 1:48–49 (ESV)"
+      "text": "Give us this day our daily bread, and forgive us our debts, as we also have forgiven our debtors.",
+      "reference": "Matthew 6:11-12 (ESV)"
     },
     "studyGuide": {
-      "intro": "The Coptic Orthodox Church fasts for 15 days (1 Mesore to 16 Mesore / August 7 to August 22) leading up to the Feast of the Assumption of the Body of Saint Mary. This fast was instituted directly by the Holy Apostles, who desired to witness the bodily assumption that had been revealed only to Saint Thomas.",
+      "intro": "This year, Pre-K students will learn the foundation of all Christian prayer: The Sign of the Cross and the prayer our Lord Jesus Christ taught us.",
       "sections": [
         {
-          "heading": "1. The Departure of Saint Mary (21 Tobi)",
-          "content": "When Saint Mary departed this world, the Holy Spirit gathered the Apostles from all over the world to Jerusalem. The Lord received her pure soul, and the Apostles buried her pure body in the Garden of Gethsemane."
-        },
-        {
-          "heading": "2. Saint Thomas and the Holy Girdle",
-          "content": "Saint Thomas was away preaching in India during her burial. Returning on a cloud, he saw angels carrying Saint Mary's luminous body ascending to heaven. In confirmation of this vision, her holy girdle (belt) dropped down into his hands."
-        },
-        {
-          "heading": "3. The Empty Tomb & The 15-Day Fast",
-          "content": "When Thomas arrived in Jerusalem and told the Apostles what he saw, they went to Gethsemane and opened the tomb. The tomb was empty, filled only with the sweet scent of incense. The Apostles then fasted and prayed for 15 days (1–15 Mesore) until the Lord revealed her bodily assumption to all of them on 16 Mesore."
-        },
-        {
-          "heading": "4. Key Takeaway: Saint Mary's Surrender & Obedience",
-          "content": "Throughout her entire life, Saint Mary was an icon of humility and total trust in God's plan. When the Archangel Gabriel announced that she would bear the Savior, her response became the ultimate example for us:<br><br><span class=\"block bg-red-50 border border-red-200 rounded-xl p-5 my-3 text-center shadow-sm\"><strong class=\"block text-red-950 font-serif italic text-lg md:text-xl leading-snug\">\"Behold, I am the servant of the Lord; let it be to me according to your word.\"</strong><span class=\"block text-xs font-bold text-red-800 mt-3 uppercase tracking-widest\">— Luke 1:38 (ESV)</span></span>During this fast, we learn to surrender our own wills to God just as she did."
+          "heading": "Quarter 1, 2 & 3: The Sign of the Cross & The Lord's Prayer",
+          "content": "In the name of the Father, and the Son, and the Holy Spirit, One God. Amen. Our Father in heaven, hallowed be your name. Your kingdom come, your will be done, on earth as it is in heaven. Give us this day our daily bread, and forgive us our debts, as we also have forgiven our debtors. And lead us not into temptation, but deliver us from evil. For yours is the kingdom and the power and the glory, forever. Amen."
         }
       ],
       "weeklyGoals": [
-        "Pray the 3rd Hour or Compline prayer from the Agpeya daily, meditating on Saint Mary.",
-        "Read Luke chapters 1 and 2 this week.",
-        "Memorize Luke 1:38 and practice saying 'let it be to me according to your word' in faith and trust in God.",
-        "Practice quietness and humility by avoiding gossip and complaints."
+        "Practice making the sign of the cross correctly (forehead, chest, left shoulder, right shoulder).",
+        "Say the Lord's Prayer every morning when you wake up.",
+        "Say the Lord's Prayer every night before going to sleep."
       ]
     },
     "quiz": [
       {
-        "question": "Why did the Apostles fast for 15 days according to Coptic tradition?",
-        "options": [
-          "To pray for rain during a drought",
-          "To see the bodily assumption of St. Mary revealed to St. Thomas",
-          "Because they were mourning the departure of St. Peter",
-          "To prepare for the Council of Nicaea"
-        ],
-        "correct": 1,
-        "explanation": "After Saint Thomas saw Saint Mary's bodily assumption in the clouds, the other Apostles desired to witness this grace and fasted for 15 days until the Lord revealed her body to them."
-      },
-      {
-        "question": "What physical token did Saint Mary give to Saint Thomas from the clouds?",
-        "options": [
-          "Her veil",
-          "Her prayer book",
-          "Her holy girdle (belt)",
-          "Her sandals"
-        ],
+        "question": "Who taught us to pray the 'Our Father'?",
+        "options": ["Moses", "Abraham", "Jesus Christ", "King David"],
         "correct": 2,
-        "explanation": "Saint Thomas asked for a blessing as he saw her ascending, and her holy girdle (belt) dropped into his hands."
+        "explanation": "Jesus Christ Himself taught His disciples this prayer during the Sermon on the Mount."
       },
       {
-        "question": "Where did the Apostles bury Saint Mary's body following her departure?",
-        "options": [
-          "Bethlehem",
-          "Gethsemane",
-          "Nazareth",
-          "Alexandria"
-        ],
+        "question": "What do we say at the very beginning of the Sign of the Cross?",
+        "options": ["Amen", "In the name of the Father", "Glory to God", "Our Father"],
         "correct": 1,
-        "explanation": "The Apostles carried her holy body with praise and hymns and buried her in the Garden of Gethsemane."
+        "explanation": "We start by touching our forehead and saying, 'In the name of the Father'."
       },
       {
-        "question": "On which Coptic date is the Feast of the Bodily Assumption of Saint Mary celebrated?",
-        "options": [
-          "21 Tobi",
-          "1 Mesore",
-          "16 Mesore",
-          "29 Koiak"
-        ],
+        "question": "Fill in the blank: 'Give us this day our daily ____.'",
+        "options": ["Bread", "Water", "Joy", "Toys"],
+        "correct": 0,
+        "explanation": "We ask God to provide us with our daily bread, meaning everything we need for the day."
+      },
+      {
+        "question": "When we make the sign of the cross, how many Gods are we praying to?",
+        "options": ["Three", "One", "Two", "Many"],
+        "correct": 1,
+        "explanation": "We say 'One God. Amen.' at the end of the sign of the cross because we believe in the Holy Trinity, who is One God."
+      },
+      {
+        "question": "Fill in the blank: 'And lead us not into ____.'",
+        "options": ["Trouble", "Temptation", "Sadness", "Darkness"],
+        "correct": 1,
+        "explanation": "We pray that God protects us and does not let us fall into temptation."
+      }
+    ]
+  },
+  {
+    "id": "mem-kg",
+    "title": "Kindergarten: The Prayer of Thanksgiving",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "Give thanks to the Lord, for he is good, for his steadfast love endures forever.",
+      "reference": "Psalm 136:1 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "Kindergarteners will spend the year learning the Prayer of Thanksgiving. The Coptic Church teaches us to start every single prayer by thanking God for all He has done.",
+      "sections": [
+        {
+          "heading": "Quarter 1, 2 & 3: The Prayer of Thanksgiving",
+          "content": "Let us give thanks to the beneficent and merciful God, the Father of our Lord, God, and Savior, Jesus Christ, for He has covered us, helped us, guarded us, accepted us unto Him, spared us, supported us, and brought us to this hour. Let us also ask Him, the Lord our God, the Almighty, to guard us in all peace this holy day and all the days of our life."
+        }
+      ],
+      "weeklyGoals": [
+        "Say 'Thank you God' for one specific thing every day.",
+        "Practice reciting the Thanksgiving Prayer with your parents before dinner.",
+        "Remember that God covers us, helps us, and guards us every single day."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "When does the Coptic Church pray the Prayer of Thanksgiving?",
+        "options": ["Only at night", "At the beginning of every prayer", "Only on Sundays", "Only during fasting"],
+        "correct": 1,
+        "explanation": "The Church teaches us to begin every prayer, liturgy, and Agpeya hour with the Prayer of Thanksgiving."
+      },
+      {
+        "question": "Fill in the blank: 'for He has covered us, helped us, ______ us...'",
+        "options": ["Guarded", "Watched", "Loved", "Saved"],
+        "correct": 0,
+        "explanation": "God guards us and protects us from all harm."
+      },
+      {
+        "question": "Who are we thanking in this prayer?",
+        "options": ["The Angels", "The Saints", "The beneficent and merciful God", "The Apostles"],
         "correct": 2,
-        "explanation": "Her departure (Dormition) is remembered on 21 Tobi, but the Assumption of her body is celebrated on 16 Mesore (August 22)."
+        "explanation": "We give thanks to the beneficent (doing good) and merciful God."
       },
       {
-        "question": "How did Saint Mary respond to the Archangel Gabriel in Luke 1:38?",
-        "options": [
-          "\"Why have you chosen me over others?\"",
-          "\"Behold, I am the servant of the Lord; let it be to me according to your word.\"",
-          "\"Give me a sign so that I may believe.\"",
-          "\"I must ask my family first.\""
-        ],
+        "question": "What do we ask God to do for the rest of the day at the end of the prayer?",
+        "options": ["Make us rich", "Guard us in all peace", "Give us food", "Make us sleep"],
         "correct": 1,
-        "explanation": "In Luke 1:38, Saint Mary showed complete humility, faith, and submission to God's message with her response: 'Behold, I am the servant of the Lord; let it be to me according to your word.'"
+        "explanation": "We ask the Almighty God to 'guard us in all peace this holy day and all the days of our life.'"
+      },
+      {
+        "question": "What does 'beneficent' mean?",
+        "options": ["Angry", "Doing good and showing kindness", "Far away", "Sleeping"],
+        "correct": 1,
+        "explanation": "Beneficent means someone who is generous, does good things, and shows kindness, just like God!"
+      }
+    ]
+  },
+  {
+    "id": "mem-1st",
+    "title": "1st Grade: Exalting St. Mary & The Creed",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "For behold, from now on all generations will call me blessed.",
+      "reference": "Luke 1:48 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "1st Graders will memorize the praise dedicated to Saint Mary (Theotokos) and begin learning the Orthodox Creed—the ultimate statement of our Christian faith.",
+      "sections": [
+        {
+          "heading": "First Quarter: We exalt you...",
+          "content": "We exalt you, the Mother of the true Light. We glorify you, O Saint, the Theotokos, for you brought forth unto us the Savior of the whole world; He came and saved our souls."
+        },
+        {
+          "heading": "Second & Third Quarter: The Orthodox Creed",
+          "content": "We believe in one God, God the Father, the Pantocrator, who created heaven and earth, and all things seen and unseen. We believe in one Lord Jesus Christ, the Only-Begotten Son of God, begotten of the Father before all ages; Light of Light, true God of true God, begotten not created, of one essence with the Father, by whom all things were made; who for us men and for our salvation came down from heaven, and was incarnate of the Holy Spirit and of the Virgin Mary, and became man."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray 'We exalt you...' asking for Saint Mary's intercessions.",
+        "Practice saying the Orthodox Creed during the Divine Liturgy.",
+        "Understand that 'Theotokos' means 'Mother of God'."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What title do we use for Saint Mary that means 'Mother of God'?",
+        "options": ["Apostle", "Theotokos", "Martyr", "Pantocrator"],
+        "correct": 1,
+        "explanation": "Theotokos is a Greek word that translates to 'God-bearer' or 'Mother of God'."
+      },
+      {
+        "question": "Who is the 'True Light' mentioned in the prayer 'We exalt you, the Mother of the True Light'?",
+        "options": ["Saint John", "The Sun", "Jesus Christ", "The Angels"],
+        "correct": 2,
+        "explanation": "Jesus Christ is the True Light of the world."
+      },
+      {
+        "question": "According to the Creed, how many Gods do we believe in?",
+        "options": ["Three", "One", "Two", "Many"],
+        "correct": 1,
+        "explanation": "The Creed begins with 'We believe in ONE God, God the Father...'"
+      },
+      {
+        "question": "What does 'Pantocrator' mean?",
+        "options": ["The Creator", "The Almighty/Ruler of All", "The Savior", "The Light"],
+        "correct": 1,
+        "explanation": "Pantocrator means the Almighty, the one who holds and rules over all of creation."
+      },
+      {
+        "question": "Who came down from heaven 'for us men and for our salvation'?",
+        "options": ["Saint Peter", "Moses", "Jesus Christ", "Elijah"],
+        "correct": 2,
+        "explanation": "Jesus Christ came down from heaven and became man to save us."
+      }
+    ]
+  },
+  {
+    "id": "mem-2nd",
+    "title": "2nd Grade: Psalm 50 (The Psalm of Repentance)",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "Wash me thoroughly from my iniquity, and cleanse me from my sin!",
+      "reference": "Psalm 51:2 (ESV) / Agpeya Psalm 50"
+    },
+    "studyGuide": {
+      "intro": "2nd Graders will focus on Psalm 50 (numbered 51 in the ESV Bible). This is the greatest prayer of repentance, written by King David. Note: The Agpeya uses the ancient Coptic (Septuagint) numbering, which is why it is called Psalm 50.",
+      "sections": [
+        {
+          "heading": "Quarter 1, 2 & 3: Psalm 50 (ESV 51)",
+          "content": "Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions. Wash me thoroughly from my iniquity, and cleanse me from my sin! For I know my transgressions, and my sin is ever before me."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray this Psalm when you feel you have made a mistake and want to say sorry to God.",
+        "Remember that God's mercy is bigger than any mistake we make.",
+        "Learn the difference between the Agpeya Psalm numbers and the ESV Bible Psalm numbers."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "Who wrote this Psalm of repentance?",
+        "options": ["Moses", "King David", "Saint Paul", "Abraham"],
+        "correct": 1,
+        "explanation": "King David wrote this Psalm to ask God for forgiveness after he had sinned."
+      },
+      {
+        "question": "Why is it called Psalm 50 in the Agpeya but Psalm 51 in the ESV Bible?",
+        "options": ["It's a mistake", "The Agpeya uses the ancient Septuagint numbering", "They are two different Psalms", "Someone lost a page"],
+        "correct": 1,
+        "explanation": "The Coptic Church uses the ancient Septuagint translation numbering for the Psalms, which is usually one number behind modern English Bibles."
+      },
+      {
+        "question": "Fill in the blank: 'Have mercy on me, O God, according to your steadfast _____.'",
+        "options": ["Anger", "Rules", "Love", "Power"],
+        "correct": 2,
+        "explanation": "We ask for mercy based on God's steadfast, never-ending love."
+      },
+      {
+        "question": "What do we ask God to do to our transgressions (sins)?",
+        "options": ["Hide them", "Blot them out", "Ignore them", "Write them down"],
+        "correct": 1,
+        "explanation": "We ask God to 'blot out' our transgressions, meaning to completely erase and forgive them."
+      },
+      {
+        "question": "What is the main theme of this Psalm?",
+        "options": ["Praising creation", "Repentance and saying sorry to God", "Asking for victory in battle", "Thanking God for food"],
+        "correct": 1,
+        "explanation": "This is the ultimate Psalm of repentance, asking God for a clean heart."
+      }
+    ]
+  },
+  {
+    "id": "mem-3rd",
+    "title": "3rd Grade: Trisagion, Psalm 66 & Prime Intro",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "May God be gracious to us and bless us and make his face to shine upon us.",
+      "reference": "Psalm 67:1 (ESV) / Agpeya Psalm 66"
+    },
+    "studyGuide": {
+      "intro": "3rd Graders have three distinct prayers to memorize this year: The Trisagion (Holy God), a beautiful Psalm of blessing, and the introduction to the Prime (Morning) Prayer.",
+      "sections": [
+        {
+          "heading": "First Quarter: The Trisagion (Holy God...)",
+          "content": "Holy God, Holy Mighty, Holy Immortal, who was born of the Virgin, have mercy on us. Holy God, Holy Mighty, Holy Immortal, who was crucified for us, have mercy on us. Holy God, Holy Mighty, Holy Immortal, who rose from the dead and ascended into the heavens, have mercy on us."
+        },
+        {
+          "heading": "Second Quarter: Psalm 66 (ESV 67)",
+          "content": "May God be gracious to us and bless us and make his face to shine upon us, that your way may be known on earth, your saving power among all nations. Let the peoples praise you, O God; let all the peoples praise you!"
+        },
+        {
+          "heading": "Third Quarter: Come let us kneel down (Prime Prayer)",
+          "content": "Come, let us kneel down. Come, let us ask Christ our God. Come, let us worship and beseech Christ our King. Come, let us kneel down. Come, let us ask Christ our God. Come, let us worship and beseech Christ our Savior."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray the Trisagion while crossing yourself three times.",
+        "Use Psalm 66 to ask God to bless your day and your family.",
+        "Kneel down physically when praying the third quarter prayer to show respect to God."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What does 'Trisagion' mean?",
+        "options": ["Thrice Holy (Holy, Holy, Holy)", "Three Kings", "Morning Prayer", "God's Love"],
+        "correct": 0,
+        "explanation": "Trisagion is a Greek word that means 'Thrice Holy', which is why we say 'Holy God, Holy Mighty, Holy Immortal'."
+      },
+      {
+        "question": "In the Trisagion, who was 'born of the Virgin, crucified for us, and rose from the dead'?",
+        "options": ["Saint Peter", "Jesus Christ", "King David", "Saint Mark"],
+        "correct": 1,
+        "explanation": "The Trisagion in the Coptic Church is addressed to Jesus Christ, recounting His incarnation, crucifixion, and resurrection."
+      },
+      {
+        "question": "In Psalm 66 (ESV 67), what do we ask God to make shine upon us?",
+        "options": ["The sun", "His face", "Gold", "A star"],
+        "correct": 1,
+        "explanation": "We pray that God makes 'his face to shine upon us,' which means we are asking for His favor and blessing."
+      },
+      {
+        "question": "What action does the Prime Prayer intro ask us to do?",
+        "options": ["Sing loudly", "Kneel down", "Close our eyes", "Raise our hands"],
+        "correct": 1,
+        "explanation": "It repeats the phrase 'Come, let us kneel down,' reminding us to physically humble ourselves before God."
+      },
+      {
+        "question": "Fill in the blank: 'Let the peoples ______ you, O God.'",
+        "options": ["Fear", "Praise", "Ignore", "Question"],
+        "correct": 1,
+        "explanation": "Psalm 66(67) calls for all the peoples of the earth to praise God."
+      }
+    ]
+  },
+  {
+    "id": "mem-4th",
+    "title": "4th Grade: Conclusion of Every Hour",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "The Lord is merciful and gracious, slow to anger and abounding in steadfast love.",
+      "reference": "Psalm 103:8 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "4th Graders will memorize the 'Conclusion of Every Hour', a deep prayer said at the end of every Agpeya hour, followed by the Hail to Mary.",
+      "sections": [
+        {
+          "heading": "First & Second Quarter: Conclusion of Every Hour",
+          "content": "Have mercy on us, O God, and have mercy on us, who, at all times and in every hour, in heaven and on earth, is worshipped and glorified, Christ our God, the good, the long suffering, the abundant in mercy, and the great in compassion, who loves the righteous and has mercy on the sinners of whom I am chief..."
+        },
+        {
+          "heading": "Third Quarter: Hail to you (Prime Prayer)",
+          "content": "Hail to you. We ask you, O Saint, full of glory, the ever-virgin, the Mother of God, the Mother of Christ, to lift up our prayers unto your beloved Son, that He may forgive us our sins."
+        }
+      ],
+      "weeklyGoals": [
+        "Pay close attention at the end of the Agpeya prayers when this is recited.",
+        "Remember that God loves the righteous AND has mercy on sinners.",
+        "Ask Saint Mary to pray for you using the 'Hail to you' prayer."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "When is the 'Conclusion of Every Hour' prayed?",
+        "options": ["Only on Sundays", "At the very end of every Agpeya hour", "Before eating meals", "Only during Vespers"],
+        "correct": 1,
+        "explanation": "As the title suggests, this prayer is used to conclude (finish) every single hour in the Agpeya."
+      },
+      {
+        "question": "The prayer says God loves the righteous. Who does it say He has mercy on?",
+        "options": ["Only the angels", "The sinners, of whom I am chief", "Those who never make mistakes", "The rich"],
+        "correct": 1,
+        "explanation": "God has mercy on the sinners. We call ourselves the 'chief' (worst) of sinners to practice humility."
+      },
+      {
+        "question": "What does 'long suffering' mean in this prayer?",
+        "options": ["God gets tired easily", "God is patient with us when we make mistakes", "We must suffer a long time", "Time moves slowly"],
+        "correct": 1,
+        "explanation": "Long suffering means God is incredibly patient and slow to anger."
+      },
+      {
+        "question": "In the Third Quarter prayer, who are we asking to 'lift up our prayers unto your beloved Son'?",
+        "options": ["Saint Mark", "The Angels", "Saint Mary (The ever-virgin)", "Saint Peter"],
+        "correct": 2,
+        "explanation": "We ask Saint Mary to intercede for us and lift our prayers to Jesus Christ."
+      },
+      {
+        "question": "Why do we ask Saint Mary to intercede for us?",
+        "options": ["Because she is a God", "So that her Son may forgive us our sins", "Because she wrote the Bible", "Because she was an Apostle"],
+        "correct": 1,
+        "explanation": "We ask her to pray for us so that her beloved Son, Jesus Christ, may forgive us our sins."
+      }
+    ]
+  },
+  {
+    "id": "mem-5th",
+    "title": "5th Grade: Holy, Holy, Holy & Compline Absolution",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "From the rising of the sun to its setting, the name of the Lord is to be praised!",
+      "reference": "Psalm 113:3 (ESV) / Agpeya Psalm 112"
+    },
+    "studyGuide": {
+      "intro": "5th Graders will learn the praise of the Angels (Holy, Holy, Holy), a Psalm of daily praise, and the beautiful absolution (forgiveness prayer) from the Compline (Bedtime) hour.",
+      "sections": [
+        {
+          "heading": "First Quarter: Holy, Holy, Holy...",
+          "content": "Holy, Holy, Holy is the Lord of hosts. Heaven and earth are full of Your glory and honor. Have mercy on us, O God the Father, the Pantocrator. O Holy Trinity, have mercy on us. O Lord, God of hosts, be with us. For we have no helper in our hardships and tribulations but You."
+        },
+        {
+          "heading": "Second Quarter: Psalm 112 (ESV 113)",
+          "content": "Praise the Lord! Praise, O servants of the Lord, praise the name of the Lord! Blessed be the name of the Lord from this time forth and forevermore! From the rising of the sun to its setting, the name of the Lord is to be praised!"
+        },
+        {
+          "heading": "Third Quarter: Compline Prayer Absolution",
+          "content": "Lord, all our sins which we committed against You in this day, whether in deeds, or in words, or in thoughts, or through all senses, please remit and forgive us, for the sake of Your holy name, as You are Good and Lover of mankind."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray 'Holy, Holy, Holy' remembering that this is the song the angels sing in heaven.",
+        "Pray the Compline Absolution every night before sleeping to clear your conscience.",
+        "Praise God from morning (sunrise) to evening (sunset) as Psalm 112 says."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What is full of God's glory and honor?",
+        "options": ["Only the church", "Heaven and earth", "Only heaven", "The ocean"],
+        "correct": 1,
+        "explanation": "The prayer states: 'Heaven and earth are full of Your glory and honor.'"
+      },
+      {
+        "question": "Who do we say is our ONLY helper in hardships and tribulations?",
+        "options": ["Our friends", "Money", "The Lord, God of hosts", "The government"],
+        "correct": 2,
+        "explanation": "We pray: 'For we have no helper in our hardships and tribulations but You.'"
+      },
+      {
+        "question": "According to Psalm 112 (ESV 113), when should the Lord's name be praised?",
+        "options": ["Only on Sundays", "From the rising of the sun to its setting", "Only in the morning", "When we get a gift"],
+        "correct": 1,
+        "explanation": "The Psalm says we should praise God from sunrise to sunset (all day long)."
+      },
+      {
+        "question": "In the Compline Absolution, we ask forgiveness for sins committed in deeds, words, thoughts, and what else?",
+        "options": ["Accidents", "Through all senses", "In our dreams", "By our friends"],
+        "correct": 1,
+        "explanation": "We ask forgiveness for sins committed in deeds, words, thoughts, or through all senses."
+      },
+      {
+        "question": "Why do we ask God to forgive us at the end of the Compline Absolution?",
+        "options": ["Because we deserve it", "As He is Good and Lover of mankind", "Because we did good deeds today", "To avoid bad dreams"],
+        "correct": 1,
+        "explanation": "We ask for forgiveness because of His nature—He is Good and the Lover of mankind."
+      }
+    ]
+  },
+  {
+    "id": "mem-6th",
+    "title": "6th Grade: The Gloria & Psalm 22 (The Shepherd)",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "The Lord is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1 (ESV) / Agpeya Psalm 22"
+    },
+    "studyGuide": {
+      "intro": "6th Graders will memorize prayers of deep comfort and praise: The Morning Absolution asking for peace, the famous Shepherd Psalm, and The Gloria (the song the angels sang at Christ's birth).",
+      "sections": [
+        {
+          "heading": "First Quarter: Prime Prayer 2nd Absolution",
+          "content": "O God, You are the cause of all light, the source of all joy, the maker of all grace, who grants all believers the deepest peace which transcends all understanding. Please, O our Master, give us this peace today."
+        },
+        {
+          "heading": "Second Quarter: Psalm 22 (ESV 23)",
+          "content": "The Lord is my shepherd; I shall not want. He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He leads me in paths of righteousness for his name's sake."
+        },
+        {
+          "heading": "Third Quarter: The Gloria (Prime Prayer)",
+          "content": "Let us praise with the angels, saying, 'Glory to God in the highest, peace on earth, and good will toward men.' We praise You. We bless You. We serve You. We worship You. We glorify You. We give thanks to You for Your great glory."
+        }
+      ],
+      "weeklyGoals": [
+        "Ask God for peace every morning before going to school.",
+        "Remember that Jesus is your Shepherd, and He will guide you to 'still waters' when you are stressed.",
+        "Sing the Gloria joyfully, knowing you are joining the angels in heaven."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "In the Prime Absolution, what kind of peace does God grant?",
+        "options": ["A temporary peace", "Peace which transcends all understanding", "World peace between nations", "Quietness in the house"],
+        "correct": 1,
+        "explanation": "God grants a deep, spiritual peace that transcends (goes beyond) human understanding."
+      },
+      {
+        "question": "In Psalm 22 (ESV 23), what does 'I shall not want' mean?",
+        "options": ["I don't want anything for Christmas", "Because God is my Shepherd, I have everything I need", "I shouldn't desire food", "I don't want to follow the Shepherd"],
+        "correct": 1,
+        "explanation": "It means that because the Lord is providing for us, we lack nothing; we have all we truly need."
+      },
+      {
+        "question": "Where does the Lord lead us according to Psalm 22 (23)?",
+        "options": ["Into the desert", "Beside still waters and paths of righteousness", "Up a high mountain", "Into battle"],
+        "correct": 1,
+        "explanation": "He leads us beside still waters to restore our soul, and in paths of righteousness."
+      },
+      {
+        "question": "Who originally sang the words: 'Glory to God in the highest, peace on earth, and good will toward men'?",
+        "options": ["King David", "The Apostles", "The Angels at Christ's birth", "Moses"],
+        "correct": 2,
+        "explanation": "The Angels sang this to the shepherds in Bethlehem when Jesus was born."
+      },
+      {
+        "question": "The Gloria ends by saying 'We give thanks to You for Your great ____.'",
+        "options": ["Gifts", "Glory", "Power", "Angels"],
+        "correct": 1,
+        "explanation": "The prayer concludes: 'We give thanks to You for Your great glory.'"
+      }
+    ]
+  },
+  {
+    "id": "mem-7th",
+    "title": "7th Grade: Compline Gospel & Psalm 129",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "Out of the depths I cry to you, O Lord! O Lord, hear my voice!",
+      "reference": "Psalm 130:1-2 (ESV) / Agpeya Psalm 129"
+    },
+    "studyGuide": {
+      "intro": "7th Graders focus on the Compline (Bedtime) prayers. We remember the story of Simeon the Elder who was finally ready to depart in peace, and we cry out to God from the 'depths' in Psalm 129.",
+      "sections": [
+        {
+          "heading": "First Quarter: Compline Prayer Gospel (Luke 2:25-32 ESV)",
+          "content": "Now there was a man in Jerusalem, whose name was Simeon, and this man was righteous and devout, waiting for the consolation of Israel, and the Holy Spirit was upon him. And it had been revealed to him by the Holy Spirit that he would not see death before he had seen the Lord's Christ. And he came in the Spirit into the temple..."
+        },
+        {
+          "heading": "Second Quarter: Psalm 129 (ESV 130)",
+          "content": "Out of the depths I cry to you, O Lord! O Lord, hear my voice! Let your ears be attentive to the voice of my pleas for mercy! If you, O Lord, should mark iniquities, O Lord, who could stand?"
+        },
+        {
+          "heading": "Third Quarter: Graciously accord, O Lord (Compline Prayer)",
+          "content": "Graciously accord, O Lord, to keep us this night without sin. Blessed are You, O Lord, God of our fathers, and exceedingly praised and glorified is Your holy name forever. Amen."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray these prayers every night to end your day in peace.",
+        "Reflect on Simeon's patience; he waited his whole life to see Jesus.",
+        "Ask God to keep you 'this night without sin.'"
+      ]
+    },
+    "quiz": [
+      {
+        "question": "Who was the righteous man waiting in Jerusalem to see the Lord's Christ?",
+        "options": ["Zechariah", "Simeon", "Joseph", "John the Baptist"],
+        "correct": 1,
+        "explanation": "Simeon the Elder was the righteous and devout man waiting in the temple."
+      },
+      {
+        "question": "What had the Holy Spirit revealed to Simeon?",
+        "options": ["That he would be a king", "That he would not see death before seeing the Christ", "That he must travel to Egypt", "That he would build a new temple"],
+        "correct": 1,
+        "explanation": "The Holy Spirit revealed that he would not die until he saw the Savior."
+      },
+      {
+        "question": "Where are we crying out from in Psalm 129 (ESV 130)?",
+        "options": ["The mountains", "The desert", "Out of the depths", "The temple"],
+        "correct": 2,
+        "explanation": "The Psalm begins, 'Out of the depths I cry to you, O Lord!' symbolizing our deep need for His mercy."
+      },
+      {
+        "question": "The Psalmist asks: 'If you, O Lord, should mark iniquities (sins), who could ______?'",
+        "options": ["Sleep", "Stand", "Run", "Hide"],
+        "correct": 1,
+        "explanation": "He says 'who could stand?' meaning that if God did not forgive us, none of us would be able to stand before Him in judgment."
+      },
+      {
+        "question": "What do we ask God to do for us 'this night' in the Compline prayer?",
+        "options": ["Keep us without sin", "Give us good dreams", "Wake us up early", "Make us wealthy"],
+        "correct": 0,
+        "explanation": "We pray: 'Graciously accord, O Lord, to keep us this night without sin.'"
+      }
+    ]
+  },
+  {
+    "id": "mem-8th",
+    "title": "8th Grade: Prime Gospel & Psalm 1",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "In the beginning was the Word, and the Word was with God, and the Word was God.",
+      "reference": "John 1:1 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "8th Graders will memorize the powerful opening of the Gospel of John (read every morning in the Prime hour), the very first Psalm about the righteous man, and the morning absolution.",
+      "sections": [
+        {
+          "heading": "First Quarter: Prime Prayer Gospel (John 1:1-17 ESV)",
+          "content": "In the beginning was the Word, and the Word was with God, and the Word was God. He was in the beginning with God. All things were made through him, and without him was not any thing made that was made. In him was life, and the life was the light of men."
+        },
+        {
+          "heading": "Second Quarter: Psalm 1",
+          "content": "Blessed is the man who walks not in the counsel of the wicked, nor stands in the way of sinners, nor sits in the seat of scoffers; but his delight is in the law of the Lord, and on his law he meditates day and night."
+        },
+        {
+          "heading": "Third Quarter: Prime Prayer First Absolution",
+          "content": "O Lord, who has given us light to pass from the darkness of the night to the light of the day, give us also to pass from the darkness of sin to the light of righteousness, that we may be children of the light."
+        }
+      ],
+      "weeklyGoals": [
+        "Meditate on Jesus as the 'Word' and the 'Light of men' every morning.",
+        "Delight in the law of the Lord (the Bible) by reading a chapter daily.",
+        "Ask God to help you walk as a 'child of the light' today."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "Who is 'the Word' mentioned in John 1:1?",
+        "options": ["The Bible", "Jesus Christ (The Son of God)", "An Angel", "The Prophets"],
+        "correct": 1,
+        "explanation": "'The Word' (Logos in Greek) is the title used for Jesus Christ, the eternal Son of God."
+      },
+      {
+        "question": "According to John 1, what was IN Him (The Word)?",
+        "options": ["Life, and the life was the light of men", "Wealth", "Anger", "Only rules"],
+        "correct": 0,
+        "explanation": "The Gospel says: 'In him was life, and the life was the light of men.'"
+      },
+      {
+        "question": "According to Psalm 1, the blessed man does NOT walk in the counsel of whom?",
+        "options": ["The elderly", "The poor", "The wicked", "The priests"],
+        "correct": 2,
+        "explanation": "Blessed is the man who walks NOT in the counsel of the wicked."
+      },
+      {
+        "question": "What does the blessed man in Psalm 1 meditate on day and night?",
+        "options": ["His mistakes", "The law of the Lord", "His wealth", "The news"],
+        "correct": 1,
+        "explanation": "His delight is in the law of the Lord, and on His law he meditates day and night."
+      },
+      {
+        "question": "In the Morning Absolution, what do we ask to pass from?",
+        "options": ["From childhood to adulthood", "From the darkness of sin to the light of righteousness", "From the house to the church", "From poverty to wealth"],
+        "correct": 1,
+        "explanation": "Just as we pass from night to day, we ask God to help us pass from the darkness of sin to the light of righteousness."
+      }
+    ]
+  },
+  {
+    "id": "mem-9th",
+    "title": "9th Grade: Vespers Prayers (Sunset)",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "And he stood over her and rebuked the fever, and it left her, and immediately she rose and began to serve them.",
+      "reference": "Luke 4:39 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "9th Graders will focus on the Vespers (Sunset) prayers. We read the Gospel of Christ healing Simon's mother-in-law at sunset, and we ask God to accept us at the 'eleventh hour'.",
+      "sections": [
+        {
+          "heading": "First Quarter: Vesper Prayer Gospel (Luke 4:38-41 ESV)",
+          "content": "And he arose and left the synagogue and entered Simon's house. Now Simon's mother-in-law was ill with a high fever, and they appealed to him on her behalf. And he stood over her and rebuked the fever, and it left her, and immediately she rose and began to serve them."
+        },
+        {
+          "heading": "Second Quarter: Vesper Prayer Litanies",
+          "content": "If the righteous one is scarcely saved, where shall I, the sinner, appear? The burden and heat of the day I did not endure, because of the weakness of my humanity. But, O merciful God, count me with the fellows of the eleventh hour."
+        },
+        {
+          "heading": "Third Quarter: Vespers Absolution",
+          "content": "We thank You, our compassionate King, for You have granted us to pass this day in peace, and brought us to the evening thankfully, and made us worthy to behold daylight until evening. O God, accept our glorification..."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray the Vespers hour around sunset (5:00 PM - 6:00 PM).",
+        "Learn from Simon's mother-in-law: once Jesus heals/helps us, we should immediately 'rise and serve.'",
+        "Practice humility by admitting the 'weakness of our humanity' to God."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "Whose house did Jesus enter in the Vespers Gospel?",
+        "options": ["Matthew's house", "Simon's (Peter) house", "Lazarus's house", "Zacchaeus's house"],
+        "correct": 1,
+        "explanation": "Jesus entered Simon Peter's house, where Simon's mother-in-law was sick."
+      },
+      {
+        "question": "What did the woman do immediately after Jesus rebuked her fever?",
+        "options": ["She went to sleep", "She began to serve them", "She left the house", "She paid Him money"],
+        "correct": 1,
+        "explanation": "She showed her gratitude by immediately rising and serving Jesus and the disciples."
+      },
+      {
+        "question": "In the Litanies, the prayer asks: 'If the righteous one is scarcely saved, where shall I, the _____, appear?'",
+        "options": ["Saint", "Sinner", "Prophet", "Rich man"],
+        "correct": 1,
+        "explanation": "The prayer teaches us deep humility, recognizing our own sinfulness before God."
+      },
+      {
+        "question": "Who do we ask God to count us with in the Litanies?",
+        "options": ["The kings of the earth", "The fellows of the eleventh hour", "The angels of wrath", "The wealthy merchants"],
+        "correct": 1,
+        "explanation": "We ask to be counted with the 'fellows of the eleventh hour,' referring to Christ's parable of the workers who came late but were still given a full reward by God's mercy."
+      },
+      {
+        "question": "In the Vespers Absolution, what are we thanking the 'compassionate King' for?",
+        "options": ["Granting us to pass the day in peace and reach the evening", "Making us rulers", "Destroying our enemies", "Giving us lots of money"],
+        "correct": 0,
+        "explanation": "We thank Him for bringing us safely through the daylight and into the peaceful evening."
+      }
+    ]
+  },
+  {
+    "id": "mem-10th",
+    "title": "10th Grade: The Holy Spirit (3rd Hour) & Midnight Watch",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "Peace I leave with you; my peace I give to you. Not as the world gives do I give to you.",
+      "reference": "John 14:27 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "10th Graders will memorize the prayers of the 3rd Hour (9:00 AM), which commemorates the descent of the Holy Spirit at Pentecost, as well as the call to wakefulness in the Midnight prayer.",
+      "sections": [
+        {
+          "heading": "First Quarter: 3rd Hour Gospel (John 14:26-15:4 ESV)",
+          "content": "But the Helper, the Holy Spirit, whom the Father will send in my name, he will teach you all things and bring to your remembrance all that I have said to you. Peace I leave with you; my peace I give to you. Not as the world gives do I give to you."
+        },
+        {
+          "heading": "Second Quarter: 3rd Hour Litanies",
+          "content": "Your Holy Spirit, O Lord, whom You sent forth upon Your holy disciples and honored apostles in the third hour, do not take away from us, O Good One, but renew Him within us. Create in me a clean heart, O God, and put a new and right spirit within me."
+        },
+        {
+          "heading": "Third Quarter: Introduction to Midnight Prayer",
+          "content": "Arise, O children of the light, let us praise the Lord of hosts, that He may grant us the salvation of our souls. When we stand in the flesh before You, O Lord, take away from our minds the sleep of forgetfulness..."
+        }
+      ],
+      "weeklyGoals": [
+        "Pray for the Holy Spirit to be 'renewed' in your heart every morning at 9:00 AM.",
+        "Remember that Christ's peace is different, deeper, and stronger than the world's peace.",
+        "Ask God to take away the 'sleep of forgetfulness' so you don't forget your faith during busy school days."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What major event does the 3rd Hour of the Agpeya remember?",
+        "options": ["The birth of Christ", "The descent of the Holy Spirit on Pentecost", "The crucifixion", "The resurrection"],
+        "correct": 1,
+        "explanation": "The 3rd Hour (9:00 AM) commemorates the Holy Spirit coming down upon the Apostles."
+      },
+      {
+        "question": "What title does Jesus give the Holy Spirit in the 3rd Hour Gospel?",
+        "options": ["The Judge", "The Helper", "The Destroyer", "The Warrior"],
+        "correct": 1,
+        "explanation": "He calls the Holy Spirit 'The Helper' who will teach us all things."
+      },
+      {
+        "question": "Jesus says, 'Peace I leave with you.' How does He give this peace?",
+        "options": ["Through money", "Not as the world gives", "By giving us easy lives", "By making us famous"],
+        "correct": 1,
+        "explanation": "He says: 'Not as the world gives do I give to you.' His peace is spiritual and eternal."
+      },
+      {
+        "question": "What do we ask God to do with the Holy Spirit in the Litanies?",
+        "options": ["Keep Him in heaven", "Do not take Him away, but renew Him within us", "Send Him to our enemies", "Make Him visible"],
+        "correct": 1,
+        "explanation": "We pray: 'do not take away from us, O Good One, but renew Him within us.'"
+      },
+      {
+        "question": "In the Midnight Prayer intro, what do we ask the Lord to take away from our minds?",
+        "options": ["Math equations", "The sleep of forgetfulness", "Happy memories", "Thoughts of food"],
+        "correct": 1,
+        "explanation": "We ask Him to remove the 'sleep of forgetfulness' so that we stay spiritually awake and remember God's commandments."
+      }
+    ]
+  },
+  {
+    "id": "mem-11th",
+    "title": "11th Grade: The Crucifixion (6th Hour) & Psalm 90",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "And Jesus said, 'Father, forgive them, for they know not what they do.'",
+      "reference": "Luke 23:34 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "11th Graders memorize the solemn prayers of the 6th Hour (12:00 PM Noon), remembering Christ being nailed to the cross, alongside the powerful Psalm of Protection (Psalm 90).",
+      "sections": [
+        {
+          "heading": "First Quarter: 6th Hour Gospel (Luke 23:32-49 ESV)",
+          "content": "Two others, who were criminals, were led away to be put to death with him. And when they came to the place that is called The Skull, there they crucified him, and the criminals, one on his right and one on his left. And Jesus said, 'Father, forgive them, for they know not what they do.'"
+        },
+        {
+          "heading": "Second Quarter: 6th Hour Litanies",
+          "content": "O You, who on the sixth day and in the sixth hour, was nailed to the cross, for the sin that our father Adam dared to commit in paradise, destroy the handwriting of our sins, O Christ our God, and save us."
+        },
+        {
+          "heading": "Third Quarter: Psalm 90 (ESV 91)",
+          "content": "He who dwells in the shelter of the Most High will abide in the shadow of the Almighty. I will say to the Lord, 'My refuge and my fortress, my God, in whom I trust.' For he will deliver you from the snare of the fowler and from the deadly pestilence."
+        }
+      ],
+      "weeklyGoals": [
+        "Pause at 12:00 PM (Noon) and remember Christ on the cross for your salvation.",
+        "Practice radical forgiveness—saying 'Father forgive them' when someone wrongs you.",
+        "Memorize Psalm 90(91) as a prayer of deep protection against anxiety and fear."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What major event does the 6th Hour of the Agpeya remember?",
+        "options": ["Christ's resurrection", "Christ being nailed to the cross", "The Last Supper", "Christ's birth"],
+        "correct": 1,
+        "explanation": "The 6th hour (12:00 PM Noon) is when Jesus was nailed to the cross."
+      },
+      {
+        "question": "What did Jesus say about the people crucifying Him?",
+        "options": ["Father, destroy them.", "Father, forgive them, for they know not what they do.", "They will be punished soon.", "I will never forgive them."],
+        "correct": 1,
+        "explanation": "Even in immense pain, Jesus showed divine mercy, praying for their forgiveness."
+      },
+      {
+        "question": "According to the Litanies, Christ was crucified for the sin that who committed in paradise?",
+        "options": ["Judas", "Our father Adam", "Cain", "The Pharisees"],
+        "correct": 1,
+        "explanation": "The prayer links Christ's sacrifice to the original sin of Adam in the Garden of Eden (paradise)."
+      },
+      {
+        "question": "What do we ask Christ to 'destroy' in the 6th Hour Litanies?",
+        "options": ["The temple", "The handwriting of our sins", "The earth", "The Roman empire"],
+        "correct": 1,
+        "explanation": "We ask Him to destroy the record (handwriting) of our sins, clearing our debt."
+      },
+      {
+        "question": "What is God called in Psalm 90 (ESV 91)?",
+        "options": ["My refuge and my fortress", "A distant observer", "A harsh judge", "A quiet whisper"],
+        "correct": 0,
+        "explanation": "The Psalmist declares full trust in God, calling Him 'My refuge and my fortress, my God, in whom I trust.'"
+      }
+    ]
+  },
+  {
+    "id": "mem-12th",
+    "title": "12th Grade: The 9th Hour & Psalm 6",
+    "date": "2026-2027 Curriculum",
+    "category": "Memorization Curriculum",
+    "memoryVerse": {
+      "text": "O Lord, rebuke me not in your anger, nor discipline me in your wrath.",
+      "reference": "Psalm 6:1 (ESV)"
+    },
+    "studyGuide": {
+      "intro": "12th Graders complete their high school journey by memorizing the 9th Hour (3:00 PM), commemorating Christ's death on the cross and His mercy toward the Righteous Thief.",
+      "sections": [
+        {
+          "heading": "First Quarter: 9th Hour Gospel (Luke 9:12-17 ESV)",
+          "content": "Now the day began to wear away, and the twelve came and said to him, 'Send the crowd away to go into the surrounding villages and countryside to find lodging and get provisions, for we are here in a desolate place.' But he said to them, 'You give them something to eat.'"
+        },
+        {
+          "heading": "Second Quarter: 9th Hour Litanies",
+          "content": "O You, who commended the spirit into the hands of the Father as You hung on the cross, in the ninth hour, and guided the thief who was crucified with You into entering paradise, do not forget me, O Good One, nor reject me..."
+        },
+        {
+          "heading": "Third Quarter: Psalm 6",
+          "content": "O Lord, rebuke me not in your anger, nor discipline me in your wrath. Be gracious to me, O Lord, for I am languishing; heal me, O Lord, for my bones are troubled. My soul also is greatly troubled. But you, O Lord—how long?"
+        }
+      ],
+      "weeklyGoals": [
+        "Remember Christ's final breath and His gift of paradise to the thief every day at 3:00 PM.",
+        "Learn from the miracle of the loaves: Jesus tells us to 'give them something to eat'—serve others with what little you have.",
+        "Pray Psalm 6 when you feel overwhelmed, asking for God's gracious healing."
+      ]
+    },
+    "quiz": [
+      {
+        "question": "What major event does the 9th Hour of the Agpeya remember?",
+        "options": ["Christ's baptism", "Christ giving up His spirit (dying) on the cross", "Christ carrying the cross", "Christ entering Jerusalem"],
+        "correct": 1,
+        "explanation": "The 9th Hour (3:00 PM) is the hour Christ commended His spirit to the Father and died on the cross."
+      },
+      {
+        "question": "In the 9th Hour Gospel (Feeding the 5,000), what did the disciples want Jesus to do with the crowd?",
+        "options": ["Preach to them longer", "Send them away to find food and lodging", "Have them build a church", "Ask them for money"],
+        "correct": 1,
+        "explanation": "The disciples wanted to send the crowd away because they were in a desolate place with no food."
+      },
+      {
+        "question": "How did Jesus respond to the disciples' request to send the crowd away?",
+        "options": ["He agreed with them", "He told the disciples: 'You give them something to eat'", "He ran away", "He got angry"],
+        "correct": 1,
+        "explanation": "Jesus challenged the disciples to provide for the crowd, leading to the miracle of multiplying the loaves and fishes."
+      },
+      {
+        "question": "Who did Jesus guide into paradise during the ninth hour, according to the litanies?",
+        "options": ["Pontius Pilate", "The thief who was crucified with Him", "King Herod", "The Roman guards"],
+        "correct": 1,
+        "explanation": "The litany remembers the Righteous Thief (St. Dismas), who repented on the cross and was promised paradise by Jesus."
+      },
+      {
+        "question": "In Psalm 6, what does the psalmist ask the Lord NOT to do?",
+        "options": ["Forget his birthday", "Rebuke him in anger or discipline him in wrath", "Give his enemies food", "Make him king"],
+        "correct": 1,
+        "explanation": "The psalmist prays for mercy, asking God not to discipline him out of anger or wrath, but to heal him."
       }
     ]
   }
